@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RondApp.Views.NavigationMenu"
              Padding="0,40,0,0"
-             Icon="hamburger.png"
+             Icon="icon.png"
              Title="RondApp Menu">
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">
       <ListView x:Name="navList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}" />
+            <ImageCell Text="{Binding Title}" ImageSource="{Binding IconRes}" />
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
