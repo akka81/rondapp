@@ -15,14 +15,17 @@ namespace RondApp.Views
         {
             InitializeComponent();
 
+
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "Assistenza",
-                IconRes = "icon.png",
-                ItemType = typeof(AssistancePage),
+                IconRes = "human.png", //new Image { Source = ImageSource.FromResource("human.pnf"), VerticalOptions = LayoutOptions.Start, HorizontalOptions = LayoutOptions.Start },
+                ItemType = typeof(AssistancePage)
+
             });
 
-
+          
+           
             navList.ItemsSource = navListItems;
         }
     }

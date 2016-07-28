@@ -16,7 +16,7 @@ namespace RondApp.Views
         {
             InitializeComponent();
             //navMenu = new NavigationMenu();
-
+           
         }
     }
 }
