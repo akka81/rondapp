@@ -50,13 +50,7 @@ namespace RondApp.Views
                 Xamarin.Forms.Maps.Position Pos = new Position(position.Latitude, position.Longitude); //37, -122);
                 myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(1)));
 
-                //Pin myPos = new Pin
-                //{
-                //    Position = Pos,
-                //    Label = "ME",
-                //    Type = PinType.Generic
-                //};
-                //myMap.Pins.Add(myPos);
+              
 
             }
             else if (status != PermissionStatus.Unknown)
@@ -67,8 +61,11 @@ namespace RondApp.Views
            
         }
 
+      
+
         private void Locator_PositionChanged(object sender, Plugin.Geolocator.Abstractions.PositionEventArgs e)
         {
+            
             Xamarin.Forms.Maps.Position Pos = new Position(e.Position.Latitude, e.Position.Longitude); //37, -122);
             myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(1)));
         }
