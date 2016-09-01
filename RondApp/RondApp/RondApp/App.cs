@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RondApp.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ namespace RondApp
         public App()
         {
 
-
+            //Database Initializazion
+            DbCenters DbMng = new DbCenters();
+            DbMng.LoadDbData();
 
             MainPage = new Views.MainPage();
 
