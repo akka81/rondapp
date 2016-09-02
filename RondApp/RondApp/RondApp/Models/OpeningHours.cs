@@ -29,5 +29,7 @@ namespace RondApp.Models
         public bool Friday { get; set; }
         public bool Saturday { get; set; }
         public bool Sunday { get; set; }
+
+        public string Notes { get; set; }
     }
 }

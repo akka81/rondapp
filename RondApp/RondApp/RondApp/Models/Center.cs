@@ -35,6 +35,8 @@ namespace RondApp.Models
         public string Notes { get; set; }
         public string Reference { get; set; }
 
+        public string Services { get; set; }
+
         public string PhoneNumber { get; set; }
 
     }
