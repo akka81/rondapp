@@ -344,6 +344,16 @@ namespace RondApp.DAL
                     ID = 49,
                     Label = "10.30"
                 });
+                Database.Insert(new Hours
+                {
+                    ID = 50,
+                    Label = "09.30-15.30"
+                });
+                Database.Insert(new Hours
+                {
+                    ID = 51,
+                    Label = "19.00-21.00"
+                });
             }
             #endregion
 
@@ -455,56 +465,90 @@ namespace RondApp.DAL
             AddHours(new OpeningHours { IDCenter = ID, IDHours = 28, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false });
             AddHours(new OpeningHours { IDCenter = ID, IDHours = 29, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false });
 	
-
-            ID = AddCenter(new Center { IDType = 6, Address = "Piazza San Fedele, 4 - MILANO", Latitude = 45.466398, Longitude = 9.191535, Name = "Assistenza Sanitaria San Fedele -Opera Padre Maino", Notes = "Per accedere a tutti i servizi è necessaria una lettera di presentaazione del Centro che invia la persona. Distribuzione di medicinali solo con ricetta medica valida.", PhoneNumber = "", Reference = "Padre Giuseppe Trotta, Tomomasso De Filippo",Services= "Visite mediche specialistiche (pediatra il martedì - fisiatra il giovedì) su appuntamento." });
+            ID = AddCenter(new Center { IDType = 6, Address = "Piazza San Fedele, 4 - MILANO", Latitude = 45.466398, Longitude = 9.191535, Name = "Assistenza Sanitaria San Fedele - Opera Padre Maino", Notes = "Per accedere a tutti i servizi è necessaria una lettera di presentaazione del Centro che invia la persona. Distribuzione di medicinali solo con ricetta medica valida.", PhoneNumber = "", Reference = "Padre Giuseppe Trotta, Tomomasso De Filippo",Services= "Visite mediche specialistiche (pediatra il martedì - fisiatra il giovedì) su appuntamento." });
             AddHours(new OpeningHours { IDCenter = ID, IDHours = 30, Monday = true, Tuesday = false, Wednesday = true, Thursday = false, Friday = false, Saturday = false, Sunday = false, Notes= "Sportello Farmaceutico" });
             AddHours(new OpeningHours { IDCenter = ID, IDHours = 29, Monday = false, Tuesday = false, Wednesday = false, Thursday = true, Friday = false, Saturday = false, Sunday = false, Notes= "Sportello Farmaceutico" });
 
+            ID = AddCenter(new Center { IDType = 6, Address = " Via Wildt, 27 - MILANO", Latitude = 45.488083, Longitude = 9.233341, Name = "C.A.D. - Centro Accoglienza e Trattamento Dipendenze", Notes = "Servizio accreditato dalla Regione Lombardia con ASL Milano. Offre lo stesso programma di attività e prestaizoni erogati dal SERT.Consulenza legale su appuntamento il Mar pomeriggio.", PhoneNumber = "", Reference = " Vito Malcangi", Services= "Assistenza socio sanitaria integrata per tossicodipendenti e alcooldipendenti sia italiani che stranieri (anche senza permesso di soggiorno) e anche per operatori dei servizi. Gestisce la prevensione, la cura e la riabilitazione." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 31, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false});
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 32, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false});
+
+            ID = AddCenter(new Center { IDType = 7, Address = "Via Pucci, 3 - MILANO", Latitude = 45.478104, Longitude = 9.166627, Name = "Docce pubbliche comunali ", Notes = "Il servizio fornisce, a costo sociale: una confezione con shampoo e una saponetta o un bagnoschiuma monouso, una confezione con un rasoio e schiuma da barba, un asciugamano, una confezione con spazzolino e dentifricio, servizio lavatrici e asciugatrici a prezzo contenuto", PhoneNumber = "", Reference = "", Services= "E' un servizio gratuito di docce pubbliche dislocate in diverse zone della città che il Comune offre per la cure e l'igiene personale, di aiuto principalmente ai cittadini in difficoltà per condizioni personali o abitative." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 33, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 50, Monday = false, Tuesday = false, Wednesday = false, Thursday = false, Friday = false, Saturday = true, Sunday = false });
+
+            ID = AddCenter(new Center { IDType = 7, Address = "Via Anselmo da Baggio, 50 - MILANO", Latitude = 45.46446, Longitude = 9.089171, Name = "Docce pubbliche comunali ", Notes = "Il servizio fornisce, a costo sociale: una confezione con shampoo e una saponetta o un bagnoschiuma monouso, una confezione con un rasoio e schiuma da barba, un asciugamano, una confezione con spazzolino e dentifricio, servizio lavatrici e asciugatrici a prezzo contenuto", PhoneNumber = "", Reference = "", Services = "E' un servizio gratuito di docce pubbliche dislocate in diverse zone della città che il Comune offre per la cure e l'igiene personale, di aiuto principalmente ai cittadini in difficoltà per condizioni personali o abitative." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 33, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 50, Monday = false, Tuesday = false, Wednesday = false, Thursday = false, Friday = false, Saturday = true, Sunday = false });
+
+        
+            ID = AddCenter(new Center { IDType = 7, Address = "Via Bertoni, 9 - MILANO", Latitude = 45.475412, Longitude = 9.193058, Name = " Fondazione Fratelli di S. Francesco", Notes = "Per la doccia gratuita si accede con tessera rilasciata Lun/ Ven 8.30 / 12.30 14.00 / 18.00 in via Bertoni, 9 c / o il Segretariato Sociale che ha validità 2 mesi e costa € 1,00.Solo per uomini. Si può fare la doccia 1 volta alla settimana.SI fornisce shampoo, asciugamano e biancheria.", PhoneNumber = "", Reference = "" ,Services= " Igiene personale." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 34, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false });
+
+           
+            ID = AddCenter(new Center { IDType = 7, Address = "Via Piave, 2 - MILANO", Latitude = 45.541872, Longitude = 9.116839, Name = "Opera S. Francesco", Notes = "Si accede con la tessera rilasciata presso il Servizio Accoglienza, Via Kramer, 1(Lun / Ven 10.30 / 15.00 - 17.30 / 19.30 - Sab 11.30 / 14.00).Solo uomini, una doccia gratuita a settimana.A chi fa la doccia vengono dati rasoio, shampoo, sapone, asciugamano oltre a un cambio di biancheria nuovo.E' necessario un documento valido.", PhoneNumber = "", Reference = "Fra Domenico Lucchini", Services= "Igiene personale." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 18, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 19, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false });
+
+            ID = AddCenter(new Center { IDType = 7, Address = " Via Ponzio, 75 - MILANO", Latitude = 45.481444, Longitude = 9.229794, Name = "Centro Francescano Maria della Passione", Notes = "Si accede con la tessera rilasciata dal Centro stesso.Si può fare la doccia una volta ogni 15 giorni per gli uomini e una volta alla settimana per le donne. il Segretariato per la distribuzione delle tessere è aperto Mar/ Sab ore 9.30 / 12.30 e Dom 10.30 / 12.30 in via Fossati, 2. La tessera permette l'accesso anche agli altri servizi (guardaroba, mense, suola di italiano e centro di ascolto).", PhoneNumber = "", Reference = " Suor Rossella Vella", Services="Igiene Personale." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 35, Monday = false, Tuesday = false, Wednesday = false, Thursday = true, Friday = false, Saturday = true, Sunday = false, Notes="Uomini" });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 35, Monday = false, Tuesday = false, Wednesday = false, Thursday = false, Friday = true, Saturday = false, Sunday = false, Notes="Donne" });
+
+            ID = AddCenter(new Center { IDType = 8, Address = "Via Galvani, 16 - MILANO", Latitude = 45.486531, Longitude = 9.99242, Name = "S.A.I. - Servizio Accoglienza Immigrati - Caritas Ambrosiana", Notes = "sai.ambrosiana @caritas.it 02.67.38.02.61 / 02.67.38.22.30", PhoneNumber = "", Reference = "Pedro di Iorio", Services= "Servizio della Caritas Ambrosiana rivolgo agli immigrati: primo ascolto, orientamento alla ricerca lavorativa, prima accoglienza notturna temporanea e su progetto, consulenza e orientamento legale, orientamento ai Servizi Sociali." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 2, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false, Notes = "Consulenza telefonica al pubblico" });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 4, Monday = true, Tuesday = true, Wednesday = true, Thursday = false, Friday = false, Saturday = false, Sunday = false });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 29, Monday = true, Tuesday = true, Wednesday = true, Thursday = false, Friday = false, Saturday = false, Sunday = false });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 4, Monday = false, Tuesday = true, Wednesday = false, Thursday = true, Friday = false, Saturday = false, Sunday = false, Notes = "Consulenza telefonica specifica ai centri di ascolto" });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 39, Monday = false, Tuesday = false, Wednesday = false, Thursday = false, Friday = true, Saturday = false, Sunday = false });
+
+            ID = AddCenter(new Center { IDType = 8, Address = "Via Zamenhof, 7 - MILANO", Latitude = 45.445194, Longitude = 9.179641, Name = "NAGA", Notes = " Aperto uno sportello dove si occupano di espulsioni, e uno sportello immigrazione (permessi di soggiorno, ricongiungimenti, ecc.) tel. 02.58.10.77.91", PhoneNumber = "", Reference = "Fabio Forfori", Services= "Assistenza legale per stranieri in particolare senza permesso di soggiorno." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 51, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false});
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 37,  Monday = false, Tuesday = true, Wednesday = false, Thursday = true, Friday = false, Saturday = false, Sunday = false, Notes= "presentarsi alle 12.30 per ritirare i biglietti" });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 2, Monday = false, Tuesday = false, Wednesday = true, Thursday = false, Friday = false, Saturday = false, Sunday = false, Notes = "presentarsi alle 8.30 per ritirare i biglietti" });
+            
+            ID = AddCenter(new Center { IDType = 8, Address = "Via Wildt, 27 - MILANO", Latitude = 45.488083, Longitude = 9.233341, Name = "C.A.D. - Centro Accoglienza e Trattamento Dipendenze", Notes = "", PhoneNumber = "", Reference = "Vito Malcangi", Services= "Assistenza legale per tossidocipendenti, alcooldipendenti e dipendenti da gioco sia italiani (anche senza dimora) che stranieri (anche senza permesso di soggiorno), inviati da parte dei servizi." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 36, Monday = true, Tuesday = true, Wednesday = true, Thursday = true, Friday = true, Saturday = false, Sunday = false, Notes= "Telefonare in segreteria per fissare appuntamento per i Martedì successivi." });
+            
+            ID = AddCenter(new Center { IDType = 8, Address = "Via San Giovanni alla Paglia, 7 - MILANO", Latitude = 45.479791, Longitude = 9.202729, Name = "Avvocato di Strada, Fondazione Progetto Arca Onlus ", Notes = "", PhoneNumber = "", Reference = "Avv.Elena Rossi, Avv.Anna Spadoni", Services= "Assistenza legale per persone senza dimora sia italiani che stranieri." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 37, Monday = false, Tuesday = false, Wednesday = true, Thursday = false, Friday = false, Saturday = false, Sunday = false });
+
+          
+
+            ID = AddCenter(new Center { IDType = 8, Address = "Piazza San Fedele, 4 - MILANO", Latitude = 45.466398, Longitude = 9.191535, Name = "Avvocato di Strada", Notes = "", PhoneNumber = "", Reference = "Avv.Elena Rossi, Avv.Anna Spadoni", Services= "Assistenza legale per persone senza dimora sia italiani che stranieri" });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 37, Monday = false, Tuesday = false, Wednesday = false, Thursday = true, Friday = false, Saturday = false, Sunday = false });
+
+                              
+
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Monte Grappa n. 8 / a - MILANO", Latitude = 45.545765, Longitude = 9.080173, Name = "Sede zonale S.S.P.T.Zona 1", Notes = "I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona. Su Appuntamento tel. 02.884.48298 / 9", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
             //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
 
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-
-            List<Center> centers = Database.Table<Center>().ToList();
+            List< Center> centers = Database.Table<Center>().ToList();
             #endregion
 
         }
