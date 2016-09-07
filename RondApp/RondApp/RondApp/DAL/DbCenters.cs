@@ -512,42 +512,55 @@ namespace RondApp.DAL
             ID = AddCenter(new Center { IDType = 8, Address = "Via San Giovanni alla Paglia, 7 - MILANO", Latitude = 45.479791, Longitude = 9.202729, Name = "Avvocato di Strada, Fondazione Progetto Arca Onlus ", Notes = "", PhoneNumber = "", Reference = "Avv.Elena Rossi, Avv.Anna Spadoni", Services= "Assistenza legale per persone senza dimora sia italiani che stranieri." });
             AddHours(new OpeningHours { IDCenter = ID, IDHours = 37, Monday = false, Tuesday = false, Wednesday = true, Thursday = false, Friday = false, Saturday = false, Sunday = false });
 
-          
-
             ID = AddCenter(new Center { IDType = 8, Address = "Piazza San Fedele, 4 - MILANO", Latitude = 45.466398, Longitude = 9.191535, Name = "Avvocato di Strada", Notes = "", PhoneNumber = "", Reference = "Avv.Elena Rossi, Avv.Anna Spadoni", Services= "Assistenza legale per persone senza dimora sia italiani che stranieri" });
             AddHours(new OpeningHours { IDCenter = ID, IDHours = 37, Monday = false, Tuesday = false, Wednesday = false, Thursday = true, Friday = false, Saturday = false, Sunday = false });
-
                               
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Monte Grappa n. 8 / a - MILANO", Latitude = 45.545765, Longitude = 9.080173, Name = "Sede zonale S.S.P.T.Zona 1", Notes = "I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona. Su Appuntamento tel. 02.884.48298 / 9"});    
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Ugo Foscolo, 5 - MILANO Scala C, 5° piano", Latitude = 45.465518, Longitude = 9.190621, Name = "Sede zonale S.S.P.T.Zona 1", Notes = "Su Appuntamento Tel. 02.884.41665 / 6  I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona."});
 
-            ID = AddCenter(new Center { IDType = 9, Address = "Via Monte Grappa n. 8 / a - MILANO", Latitude = 45.545765, Longitude = 9.080173, Name = "Sede zonale S.S.P.T.Zona 1", Notes = "I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona. Su Appuntamento tel. 02.884.48298 / 9", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
-            //ID = AddCenter(new Center { IDType = , Address = "", Latitude = , Longitude = , Name = "", Notes = "", PhoneNumber = "", Reference = "" });
+            ID = AddCenter(new Center { IDType = 9, Address = " Via S. Elembardo, 4 - MILANO", Latitude = 45.505526, Longitude = 9.220451, Name = "Sede zonale S.S.P.T.Zona 2", Notes = " Su Appuntamento Tel. 02.884.46612/13/14/15 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona."});
 
+            ID = AddCenter(new Center { IDType = 9, Address = "Via degli Assereto, 19 - MILANO angolo via Delle Abbadesse, 18", Latitude = 45.48933, Longitude = 9.19564, Name = "Sede zonale S.S.P.T.Zona 2", Notes = "Su Appuntamento	Tel. 02.884.45915 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Pini, 1 - MILANO", Latitude = 45.484232, Longitude = 9.240862, Name = " Sede zonale S.S.P.T.Zona 3 ", Notes = " Su Appuntamento Tel. 02.884.7925 / 6 / 7 / 8 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona."});
+     
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Monteverdi, 8 - MILANO", Latitude = 45.482462, Longitude = 9.214785, Name = "Sede zonale S.S.P.T.Zona 3", Notes = "Su Appuntamento 02.884.47438 Tel.I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona."});
+       
+            ID = AddCenter(new Center { IDType = 9, Address = "Viale Puglia, 33 - MILANO", Latitude = 45.450073, Longitude = 9.22373, Name = " Sede zonale S.S.P.T.Zona 4", Notes = "Su Appuntamento 02.48438/9/40/41 Tel. I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+       
+            ID = AddCenter(new Center { IDType = 9, Address = " Via dei Cinquecento, 7 - MILANO", Latitude = 45.435944, Longitude = 9.222056, Name = "Sede zonale S.S.P.T.Zona 4", Notes = "Su Appuntamento Tel. 02.884.54231/32/33 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Barabino, 8 - MILANO", Latitude = 45.43362, Longitude = 9.22203, Name = "Sede zonale S.S.P.T.Zona 4 - 5", Notes = "Su Appuntamento Tel. 02.884.45446 / 02.884.45433 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+      
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Don Carlo San Martino, 10 - MILANO", Latitude = 45.468026, Longitude = 9.235397, Name = "Sede zonale S.S.P.T.Zona 4", Notes = "Su Appuntamento Tel. 02.884.48455/6 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+
+            ID = AddCenter(new Center { IDType = 9, Address = "Viale Tibaldi, 41 - MILANO", Latitude = 45.444555, Longitude = 9.183285, Name = "Sede zonale S.S.P.T.Zona 5 - 6", Notes = "Su Appuntamento Tel. 02.884.48435 / 02.884.62887  I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+        
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Boifava, 17 - MILANO", Latitude = 45.427082, Longitude = 9.174865, Name = "Sede zonale S.S.P.T.Zona 5", Notes = "Su Appuntamento Tel. 02.884.58553/5/6/7/9 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Legioni Romane, 54 - MILANO", Latitude = 45.459649, Longitude = 9.12765, Name = "Sede zonale S.S.P.T.Zona 6", Notes = "Su Appuntamento Tel. 02.884.63570 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona."});
+          
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Gonin, 28 - MILANO", Latitude = 45.442977 , Longitude = 9.125629  , Name = "Sede zonale S.S.P.T.Zona 6", Notes = "Su Appuntamento Tel.02.884.51319 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona."});
+                          
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Anselmo da Baggio, 54 - MILANO", Latitude = 45.464334 , Longitude =9.088639 , Name = "Sede zonale S.S.P.T.Zona 7", Notes = "Tel. 02.884.65171 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+            AddHours(new OpeningHours { IDCenter = ID, IDHours = 38, Monday = true, Tuesday = true, Wednesday = false, Thursday = true, Friday = false, Saturday = false, Sunday = false });
+
+            ID = AddCenter(new Center { IDType = 9, Address = "Piazzale Segesta, 11 - MILANO", Latitude =45.47567 , Longitude = 9.136941, Name = "Sede zonale S.S.P.T.Zona 7", Notes = "Su Appuntamento Tel. 02.884.65882 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Colleoni, 8 - MILANO", Latitude = 45.483164, Longitude = 9.154303, Name = "Sede zonale S.S.P.T.Zona 8", Notes = "Su Appuntamento Tel.02.884.47083/5/6 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Aldini, 72 - MILANO", Latitude = 45.511849, Longitude = 9.13163, Name = " Sede zonale S.S.P.T.Zona 8", Notes = "Su Appuntamento Tel. 02.884.44240/1/2/3/4 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+            
+            ID = AddCenter(new Center { IDType = 9, Address = "Piazzale Accursio, 5 - MILANO", Latitude = 45.491369, Longitude = 9.14622, Name = "Sede zonale S.S.P.T.Zona 8", Notes = "Su Appuntamento Tel. 02.884.64293/4/5 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+            
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Ojetti, 20 - MILANO", Latitude = 45.49485, Longitude = 9.113138, Name = "Sede zonale S.S.P.T.Zona 8", Notes = "Su Appuntamento Tel. 02.884.41288 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+            
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Brivio, 4 - MILANO", Latitude = 45.503798, Longitude = 9.177276, Name = "Sede zonale S.S.P.T.Zona 9", Notes = "Su Appuntamento Tel. 02.884.48439/1 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+            
+           ID = AddCenter(new Center { IDType = 9, Address = "Via Giolli, 29 - MILANO", Latitude =45.526862 , Longitude = 9.210527, Name = "Sede zonale S.S.P.T.Zona 9", Notes = "Su Appuntamento Tel.02.884.46430/1/2/3/4/5 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona."});
+            
+            ID = AddCenter(new Center { IDType = 9, Address = "Via Sant'Arnaldo, 17 - MILANO", Latitude = 45.525392, Longitude = 9.176776, Name = "Sede zonale S.S.P.T.Zona 9", Notes = "Su Appuntamento	Tel. 02.884.45773/4/5/7 I servizi si rivolgono ai residenti nella Città di Milano ed hanno compentenza per zona." });
+            
             List< Center> centers = Database.Table<Center>().ToList();
             #endregion
 
