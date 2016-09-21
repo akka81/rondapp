@@ -38,6 +38,7 @@
     <Compile Include="App.cs" />
     <Compile Include="DAL\DbCenters.cs" />
     <Compile Include="DAL\ISQlite.cs" />
+    <Compile Include="Managers\CentersManager.cs" />
     <Compile Include="Models\Center.cs" />
     <Compile Include="Models\CenterType.cs" />
     <Compile Include="Models\Hours.cs" />
@@ -46,6 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AssistancePage.xaml.cs">
       <DependentUpon>AssistancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CenterPage.xaml.cs">
+      <DependentUpon>CenterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -123,7 +127,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Managers\" />
+    <EmbeddedResource Include="Views\CenterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\NavigationMenu.xaml">

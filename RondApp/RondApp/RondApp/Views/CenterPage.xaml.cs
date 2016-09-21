@@ -8,16 +8,11 @@ using Xamarin.Forms;
 
 namespace RondApp.Views
 {
-    public partial class MainPage : MasterDetailPage
+    public partial class CenterPage : ContentPage
     {
-        //NavigationMenu navMenu;
-
-        public MainPage()
+        public CenterPage()
         {
             InitializeComponent();
-           
-            //navMenu = new NavigationMenu();
-           
         }
     }
 }

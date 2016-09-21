@@ -18,6 +18,11 @@ namespace RondApp.DAL
         {
             Database = DependencyService.Get<ISQlite>().GetConnection();
 
+          
+        }
+
+        public void LoadDbData()
+        {
             //dropping tables
             Database.Execute("DROP TABLE IF EXISTS TB_OPENING_HOURS");
             Database.Execute("DROP TABLE IF EXISTS TB_TYPES");
@@ -29,10 +34,7 @@ namespace RondApp.DAL
             Database.CreateTable<CenterType>();
             Database.CreateTable<OpeningHours>();
             Database.CreateTable<Center>();
-        }
 
-        public void LoadDbData()
-        {
             #region CenterType
             if (Database.Table<CenterType>().Count() == 0)
             {
@@ -566,6 +568,12 @@ namespace RondApp.DAL
 
         }
 
+        public SQLiteConnection GetDatabaseConn()
+        {
+            return this.Database;
+        }
+
+        #region Private methods
         private int AddCenter(Center newCenter)
         {
             return Database.Insert(newCenter);
@@ -575,6 +583,7 @@ namespace RondApp.DAL
         {
             Database.Insert(newOpening);
         }
+        #endregion
 
     }
 }

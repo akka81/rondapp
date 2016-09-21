@@ -17,11 +17,16 @@ namespace RondApp.Models
 
         [ForeignKey(typeof(Center))]
         public int IDCenter { get; set; }
-                
+          
+        [ManyToOne]
+        public Center center { get; set; }  
+           
         [ForeignKey(typeof(Hours))]
         public int IDHours { get; set; }
 
-     
+        [ManyToOne]
+        public Hours Hour { get; set; }
+
         public bool Monday { get; set; }
         public bool Tuesday { get; set; }
         public bool Wednesday { get; set; }
