@@ -1,6 +1,5 @@
 ﻿using RondApp.Models;
 using SQLite;
-using SQLite.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -576,7 +575,8 @@ namespace RondApp.DAL
         #region Private methods
         private int AddCenter(Center newCenter)
         {
-            return Database.Insert(newCenter);
+             Database.Insert(newCenter);
+            return newCenter.ID;
         }
 
         private void AddHours(OpeningHours newOpening)

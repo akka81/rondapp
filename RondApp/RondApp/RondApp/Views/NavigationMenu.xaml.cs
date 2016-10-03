@@ -11,6 +11,8 @@ namespace RondApp.Views
     public partial class NavigationMenu : ContentPage
     {
         public List<Models.NavigationItem> navListItems = new List<Models.NavigationItem>();
+
+        public ListView getNavigationListView { get { return navList; } }
         public NavigationMenu()
         {
             InitializeComponent();
@@ -19,13 +21,32 @@ namespace RondApp.Views
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "Assistenza",
-                IconRes = "human.png", //new Image { Source = ImageSource.FromResource("human.pnf"), VerticalOptions = LayoutOptions.Start, HorizontalOptions = LayoutOptions.Start },
+                IconRes = "human.png", 
                 ItemType = typeof(AssistancePage)
 
             });
+            navListItems.Add(new Models.NavigationItem
+            {
+                Title = "Mappa",
+                IconRes = "human.png", 
+                ItemType = typeof(MapPage)
 
-          
-           
+            });
+            navListItems.Add(new Models.NavigationItem
+            {
+                Title = "Lista Centri",
+                IconRes = "human.png",
+                ItemType = typeof(CentersList)
+
+            });
+            navListItems.Add(new Models.NavigationItem
+            {
+                Title = "About",
+                IconRes = "human.png",
+                ItemType = typeof(About)
+
+            });
+
             navList.ItemsSource = navListItems;
         }
     }

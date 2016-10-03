@@ -1,5 +1,4 @@
 ﻿using RondApp.DAL;
-using SQLite.Net;
 using System.IO;
 using Windows.Storage;
 using Xamarin.Forms;
@@ -9,11 +8,11 @@ namespace RondApp.WinPhone
 {
     public class AppDatabase : ISQlite
     {
-        public SQLiteConnection GetConnection()
+        public SQLite.SQLiteConnection GetConnection()
         {
             var sqliteFilename = "RondApp_DB.db3";
             string path = Path.Combine(ApplicationData.Current.LocalFolder.Path, sqliteFilename);
-            var conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(),path);
+            var conn = new SQLite.SQLiteConnection(path);
             return conn;
         }
     }

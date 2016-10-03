@@ -1,7 +1,5 @@
 ﻿
 using SQLite;
-using SQLite.Net.Attributes;
-using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +14,14 @@ namespace RondApp.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
-        [ForeignKey(typeof(CenterType))]
+     
         public int IDType { get; set; }
 
-    
-        [ManyToOne]
-        public CenterType CenterType { get; set; }
+     
+        //public CenterType CenterType { get; set; }
 
-        [OneToMany]
-        public List<OpeningHours> Openings { get; set; }
+     
+    //    public List<OpeningHours> Openings { get; set; }
 
         public double Longitude { get; set; }
 

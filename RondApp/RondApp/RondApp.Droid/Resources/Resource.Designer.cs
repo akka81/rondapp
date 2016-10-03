@@ -26,8 +26,6 @@ namespace RondApp.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::RondApp.Droid.Resource.String.ApplicationName;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::RondApp.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::RondApp.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -3229,12 +3227,6 @@ namespace RondApp.Droid
 		
 		public partial class String
 		{
-			
-			// aapt resource value: 0x7f060046
-			public const int ApplicationName = 2131099718;
-			
-			// aapt resource value: 0x7f060045
-			public const int Hello = 2131099717;
 			
 			// aapt resource value: 0x7f06002e
 			public const int abc_action_bar_home_description = 2131099694;

@@ -97,7 +97,10 @@ namespace RondApp.Views
             CentersManager cMng = new CentersManager(db.GetDatabaseConn());
 
             Pin SelectedPin = (Pin)sender;
-            cMng.GetByCoordinates(SelectedPin.Position.Latitude, SelectedPin.Position.Longitude);
+
+            await Navigation.PushAsync(new CenterPage(SelectedPin.Position.Latitude, SelectedPin.Position.Longitude));
+
+          
         }
     }
 }
