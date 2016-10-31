@@ -11,6 +11,7 @@ using Plugin.Permissions.Abstractions;
 using RondApp.Managers;
 using RondApp.DAL;
 using RondApp.Models;
+using RondApp.Entities;
 
 namespace RondApp.Views
 {
@@ -72,9 +73,9 @@ namespace RondApp.Views
             myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(1)));
         }
 
-        private void SetMapPins(List<Center> centers)
+        private void SetMapPins(List<CenterDetailed> centers)
         {
-            foreach (Center ctr in centers)
+            foreach (CenterDetailed ctr in centers)
             {
                 Pin centerPin = new Pin
                 {

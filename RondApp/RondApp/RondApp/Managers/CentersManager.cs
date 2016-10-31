@@ -19,25 +19,27 @@ namespace RondApp.Managers
         }
 
 
-        public List<Center> All()
+        public List<CenterDetailed> All()
         {
-            return this.dbConn.Table<Center>().ToList();
+
+            List<CenterDetailed> Centers = this.dbConn.Query<CenterDetailed>("Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID");
+            return Centers;  //this.dbConn.Table<Center>().OrderBy(c=>c.Name).ToList();
         }
 
 
-        public List<Center> GetByCoordinates(double Latitude, double Longitude)
+        public List<CenterDetailed> GetByCoordinates(double Latitude, double Longitude)
         {
 
-            List<CenterDetailed> crts = this.dbConn.Query<CenterDetailed>("Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID where c.Latitude = ? and c.Longitude = ?", Latitude, Longitude);
+            List<CenterDetailed> Centers = this.dbConn.Query<CenterDetailed>("Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID where c.Latitude = ? and c.Longitude = ?", Latitude, Longitude);
 
-            List<Center> Centers = this.dbConn.Table<Center>().Where(c => c.Latitude == Latitude && c.Longitude == Longitude).ToList();
+            //List<Center> Centers = this.dbConn.Table<Center>().Where(c => c.Latitude == Latitude && c.Longitude == Longitude).ToList();
 
-            int id = Centers[0].ID;
-            int idType = Centers[0].IDType;
+            //int id = Centers[0].ID;
+            //int idType = Centers[0].IDType;
 
-            CenterType CType = this.dbConn.Table<CenterType>().FirstOrDefault(ct => ct.ID == idType);
+            //CenterType CType = this.dbConn.Table<CenterType>().FirstOrDefault(ct => ct.ID == idType);
 
-            List<OpeningHours> openings = this.dbConn.Table<OpeningHours>().Where(o => o.IDCenter== id).ToList();
+            //List<OpeningHours> openings = this.dbConn.Table<OpeningHours>().Where(o => o.IDCenter== id).ToList();
 
             return Centers;
         }
