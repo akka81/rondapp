@@ -2,40 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RondApp.Views.CentersList">
+   <ContentPage.Content>
+<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
 
-  <Label x:Name="SearchResults" HorizontalTextAlignment="End" Text="{Binding SearchResults}"></Label>
-  <ScrollView>  
+  <Label Text="cia"></Label>
+  <SearchBar Placeholder="Ricerca..." TextChanged="SearchBar_OnTextChanged" HeightRequest="50"></SearchBar>
     <ListView x:Name="centersList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <Grid Margin="5" Padding="0">
+          <Grid>
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="5"  />
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-              <RowDefinition Height="*"></RowDefinition>
-              <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#03A9F4">
+            <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#03A9F4" Grid.RowSpan="2">
             </Label>
-          
-            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" BackgroundColor="#FFF" TextColor="#000"></Label>
-            
+            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" BackgroundColor="#FFF" TextColor="#000"></Label>   
             <Label FontSize="Micro" Grid.Row="1" Grid.Column="1" Text="{Binding TypeName}" BackgroundColor="#FFF" TextColor="#000"></Label>
            
-           
           </Grid>
-          
-          
+                   
         </ViewCell> 
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
-  </ScrollView>
-
-
-
+</StackLayout>
+ </ContentPage.Content>
 </ContentPage>

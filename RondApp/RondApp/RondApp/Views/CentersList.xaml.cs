@@ -34,6 +34,20 @@ namespace RondApp.Views
             centersList.ItemsSource = centers;
         }
 
-        
+        private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            centersList.BeginRefresh();
+
+
+            centersList.ItemsSource = centers.Where(c => c.Name.Contains(e.NewTextValue)).ToList();
+
+            centersList.EndRefresh();
+
+
+        }
+
     }
+
+
 }
