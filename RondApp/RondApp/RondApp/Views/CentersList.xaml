@@ -5,21 +5,26 @@
    <ContentPage.Content>
 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
 
-  <Label Text="cia"></Label>
-  <SearchBar Placeholder="Ricerca..." TextChanged="SearchBar_OnTextChanged" HeightRequest="50"></SearchBar>
-    <ListView x:Name="centersList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+  <Label Text="{Binding SearchResults}"></Label>
+  <SearchBar Placeholder="Ricerca..." TextChanged="SearchBar_OnTextChanged" HeightRequest="50" HorizontalTextAlignment="Start"></SearchBar>
+   <Label Text="{Binding SearchResults}" HorizontalTextAlignment="End"></Label>
+    <ListView x:Name="centersList" VerticalOptions="FillAndExpand" SeparatorVisibility="Default" RowHeight="100">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <Grid>
+          <Grid Padding="3" ColumnSpacing="0" RowSpacing="0">
             <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="5"  />
+              <ColumnDefinition Width="6"  />
               <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#03A9F4" Grid.RowSpan="2">
             </Label>
-            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" BackgroundColor="#FFF" TextColor="#000"></Label>   
-            <Label FontSize="Micro" Grid.Row="1" Grid.Column="1" Text="{Binding TypeName}" BackgroundColor="#FFF" TextColor="#000"></Label>
+            <Label  Grid.Row="0" Grid.Column="1" Text="{Binding Name}" BackgroundColor="#FFF" TextColor="#000"></Label>
+            
+           <Label FontSize="Micro" Grid.Row="1" Grid.Column="1" Text="{Binding TypeName}" BackgroundColor="#FFF" TextColor="#000"></Label>
+           <Label FontSize="Micro" Grid.Row="0" Grid.Column="2" Text="Aperto" BackgroundColor="#FFF" TextColor="#000"></Label>
+          
            
           </Grid>
                    
