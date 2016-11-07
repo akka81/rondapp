@@ -15,7 +15,6 @@ namespace RondApp.Views
     public partial class CentersList : ContentPage
     {
 
-        public string SearchResults = string.Empty;
         private CentersManager centersMng;
         private SQLiteConnection db;
         protected List<CenterDetailed> centers;
@@ -24,14 +23,23 @@ namespace RondApp.Views
         {
             InitializeComponent();
 
+            centersList.ItemSelected += CentersList_ItemSelected;
             //get all Centers
             DbCenters db = new DbCenters();
             centersMng = new CentersManager(db.GetDatabaseConn());
 
             centers = centersMng.All();
-            SearchResults = $"Trovati {centers.Count} Centri";
+            SearchResults.Text = $"Trovati {centers.Count} Centri";
 
             centersList.ItemsSource = centers;
+        }
+
+        private async void CentersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
+            await Navigation.PushAsync(new CenterPage(1));
+
+            ((ListView)sender).SelectedItem = null;
         }
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
@@ -39,8 +47,13 @@ namespace RondApp.Views
 
             centersList.BeginRefresh();
 
+            var FoundCenters = centers.Where(c => c.Name.Contains(e.NewTextValue)).ToList();
 
-            centersList.ItemsSource = centers.Where(c => c.Name.Contains(e.NewTextValue)).ToList();
+            SearchResults.Text = $"Trovati {FoundCenters.Count} Centri";
+            centersList.ItemsSource = FoundCenters;
+
+
+            
 
             centersList.EndRefresh();
 

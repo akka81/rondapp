@@ -12,6 +12,12 @@ namespace RondApp.Views
 {
     public partial class CenterPage : ContentPage
     {
+
+        public CenterPage(int centerId)
+        {
+            InitializeComponent();
+        }
+
         public CenterPage(double Latitude, double Longitude)
         {
             DbCenters db = new DbCenters();
@@ -21,5 +27,7 @@ namespace RondApp.Views
             cMng.GetByCoordinates(Latitude, Longitude);
             InitializeComponent();
         }
+
+       
     }
 }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="RondAppTheme" parent="RondAppTheme.Base">
+  </style>
+  <style name="RondAppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_dark</item>
+    <item name="colorAccent">@color/accent</item>
+    <item name="android:windowBackground">@color/window_background</item>
+    <item name="windowActionModeOverlay">true</item>
+    <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+
+
+    
+  </style>
+</resources>
