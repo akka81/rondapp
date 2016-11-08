@@ -40,6 +40,7 @@
     </Compile>
     <Compile Include="DAL\DbCenters.cs" />
     <Compile Include="DAL\ISQlite.cs" />
+    <Compile Include="Entities\OpeningHoursDetailed.cs" />
     <Compile Include="Managers\CentersManager.cs" />
     <Compile Include="Models\Center.cs" />
     <Compile Include="Entities\CenterDetailed.cs" />

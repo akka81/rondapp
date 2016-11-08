@@ -1,39 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RondApp.Views.CentersList">
-   <ContentPage.Content>
-<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+             x:Class="RondApp.Views.CentersList" Title="Lista Centri">
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
 
+      <SearchBar Placeholder="Ricerca..." TextChanged="SearchBar_OnTextChanged" HeightRequest="50" HorizontalTextAlignment="Start"></SearchBar>
 
-  
-    <SearchBar Placeholder="Ricerca..." TextChanged="SearchBar_OnTextChanged" HeightRequest="50" HorizontalTextAlignment="Start"></SearchBar>
-    <Label x:Name="SearchResults" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"></Label>
-    <BoxView Color="#009688" HeightRequest="2"  HorizontalOptions="Fill"></BoxView>
- 
-    <ListView x:Name="centersList" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <Grid Padding="5" ColumnSpacing="2" RowSpacing="0">
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="7"  />
-              <ColumnDefinition Width="*" />
-              <ColumnDefinition Width="15"/>
-            </Grid.ColumnDefinitions>
-        
-            <Label Grid.Row="0" Grid.Column="0" BackgroundColor="#03A9F4" Grid.RowSpan="2">
-            </Label>
-            <Label FontAttributes="Bold"  Grid.Row="0" Grid.Column="1" Text="{Binding Name}"  VerticalTextAlignment="Start" VerticalOptions="FillAndExpand" BackgroundColor="#FFF"></Label>
-           <Label FontSize="Small" Grid.Row="1" Grid.Column="1" Text="{Binding TypeName}"  VerticalTextAlignment="Center" BackgroundColor="#FFF"></Label>
-           <Label FontSize="Medium" Grid.Row="0" Grid.Column="2" Text="A" Grid.RowSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Green" TextColor="#FFF"></Label>
-        
-          </Grid>
-                   
-        </ViewCell> 
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
-</StackLayout>
- </ContentPage.Content>
+      <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,7,0">
+        <Label x:Name="SearchResults" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"></Label>
+
+        <BoxView Color="#009688" HeightRequest="2"  HorizontalOptions="Fill"></BoxView>
+      </StackLayout>
+      <ListView x:Name="centersList" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,2,0">
+                <Grid Padding="5" ColumnSpacing="2" RowSpacing="0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8"  />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30"/>
+                  </Grid.ColumnDefinitions>
+
+                  <Label Grid.Row="0" Grid.Column="0" BackgroundColor="{Binding ColorDark}" Grid.RowSpan="2">
+                  </Label>
+                  <Label FontAttributes="Bold"  Grid.Row="0" Grid.Column="1" Text="{Binding Name}"  VerticalTextAlignment="Start" VerticalOptions="FillAndExpand" BackgroundColor="#FFF"></Label>
+                  <Label FontSize="Small" Grid.Row="1" Grid.Column="1" Text="{Binding TypeName}"  VerticalTextAlignment="Center" BackgroundColor="#FFF"></Label>
+                  <Label FontSize="Medium" Grid.Row="0" Grid.Column="2" Text="{Binding OpenNow}" FontAttributes="Bold" Grid.RowSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="{Binding OpenColor}" TextColor="#FFF"></Label>
+
+                </Grid>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

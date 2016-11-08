@@ -13,6 +13,12 @@ namespace RondApp.Views
         public About()
         {
             InitializeComponent();
+
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += (s, e) => {
+                Device.OpenUri(new Uri(((Label)s).Text));
+            };
+            gitHubLbl.GestureRecognizers.Add(tapGestureRecognizer);
         }
     }
 }

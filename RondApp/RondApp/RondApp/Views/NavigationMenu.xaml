@@ -7,11 +7,26 @@
              Title="RondApp Menu">
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">
-      <ListView x:Name="navList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="2,20,2,0" BackgroundColor="#F5F5F5">
+        <Image Source="rondaCarita.png"/>
+        <BoxView Color="#009688" HeightRequest="2"  HorizontalOptions="Fill"></BoxView>
+      </StackLayout>
+      <ListView x:Name="navList" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ImageCell Text="{Binding Title}" ImageSource="{Binding IconRes}"/>
-           
+            <ViewCell>
+              <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,2,15">
+                <Grid Padding="5" ColumnSpacing="2" RowSpacing="0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="68"  />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <Image Source="{Binding IconRes}"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+                  <Label FontSize="Medium"  Grid.Row="0" Grid.Column="1" Text="{Binding Title}"  VerticalTextAlignment="Center"></Label>
+                  <Label FontSize="Small" Grid.Row="1" Grid.Column="1" Text="{Binding Description}"  VerticalTextAlignment="Center"></Label>
+                </Grid>
+              </StackLayout>
+            </ViewCell>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

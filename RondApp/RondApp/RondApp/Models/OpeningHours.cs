@@ -16,15 +16,11 @@ namespace RondApp.Models
      
         public int IDCenter { get; set; }
           
-    
-         
-           
+          
        
         public int IDHours { get; set; }
 
-      
-       
-
+     
         public bool Monday { get; set; }
         public bool Tuesday { get; set; }
         public bool Wednesday { get; set; }

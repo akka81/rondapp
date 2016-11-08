@@ -60,7 +60,7 @@ namespace RondApp.DAL
                 Database.Insert(new CenterType
                 {
                     ID = 4,
-                    Label = "Mesa"
+                    Label = "Mensa"
                 });
                 Database.Insert(new CenterType
                 {

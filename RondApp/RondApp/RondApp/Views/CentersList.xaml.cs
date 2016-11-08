@@ -36,27 +36,26 @@ namespace RondApp.Views
 
         private async void CentersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+         
 
-            await Navigation.PushAsync(new CenterPage(1));
-
+            CenterDetailed selectedCenter = (CenterDetailed)((ListView)sender).SelectedItem;
             ((ListView)sender).SelectedItem = null;
+
+            await Navigation.PushAsync(new CenterPage(selectedCenter.ID));
+            
+           
         }
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
         {
 
             centersList.BeginRefresh();
-
-            var FoundCenters = centers.Where(c => c.Name.Contains(e.NewTextValue)).ToList();
+            var FoundCenters = centers.Where(c => c.Name.ToLower().Contains(e.NewTextValue) || c.TypeName.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
 
             SearchResults.Text = $"Trovati {FoundCenters.Count} Centri";
             centersList.ItemsSource = FoundCenters;
 
-
-            
-
             centersList.EndRefresh();
-
 
         }
 

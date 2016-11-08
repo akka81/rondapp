@@ -1,6 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RondApp.Views.About">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="RondApp.Views.About" Title="About">
+
+  <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
+
+    <Label FontSize="Large" Text="ronda carità e solidarietà Milano" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Image Source="rondaCarita.png"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label FontSize="Large" Text="RondApp" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label FontSize="Small" Text="v 1.0 (beta) Anakin" VerticalOptions="Center" HorizontalOptions="Center" />
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" Padding="0,20,0,20">
+      <Label FontSize="Large" Text="Developers" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label Text="Marco 'akka' Acchini" TextColor="#512DA8"  VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label Text="Andrea 'biancio' Biancini" TextColor="#512DA8"  VerticalOptions="Center" HorizontalOptions="Center" />
+    </StackLayout>
+
+    <Label FontSize="Small" Text="Feel free to contribute" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label x:Name="gitHubLbl" FontSize="Small" Text="https://github.com/akka81/rondapp" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#448AFF" />
+    
+  </StackLayout>
+ 
 </ContentPage>

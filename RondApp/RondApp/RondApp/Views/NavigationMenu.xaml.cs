@@ -21,28 +21,31 @@ namespace RondApp.Views
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "Assistenza",
-                IconRes = "human.png", 
+                IconRes = "help.png", 
+                Description = "Cerca il centro adeguato",
                 ItemType = typeof(AssistancePage)
 
             });
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "Mappa",
-                IconRes = "human.png", 
+                IconRes = "map.png", 
+                Description = "Visualizza i centri sulla mappa",
                 ItemType = typeof(MapPage)
 
             });
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "Lista Centri",
-                IconRes = "human.png",
+                IconRes = "List.png",
+                Description = "Visualizza l'elenco di tutti i centri",
                 ItemType = typeof(CentersList)
 
             });
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "About",
-                IconRes = "human.png",
+                IconRes = "about.png",
                 ItemType = typeof(About)
 
             });
