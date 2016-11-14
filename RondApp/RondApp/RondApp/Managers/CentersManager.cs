@@ -73,6 +73,12 @@ namespace RondApp.Managers
 
         }
 
+        public List<OpeningHoursDetailed> GetCenterOpeningsHours(int centerId)
+        {
+            List<OpeningHoursDetailed> centerOpeningHours = this.dbConn.Query<OpeningHoursDetailed>("Select oh.*, h.Label as TypeName from TB_OPENING_HOURS oh LEFT JOIN TB_HOURS h ON oh.IDHours = h.ID where oh.IDCenter =?", centerId);
+            return centerOpeningHours;
+        }
+
         public List<CenterDetailed> GetByCriteria()
         {
             throw new NotImplementedException();
@@ -97,13 +103,13 @@ namespace RondApp.Managers
                         if (isOpeningDay(ohd))
                         {
                             Center.OpenNow = "A";
-                            Center.OpenColor = "Green";
+                            Center.OpenColor = "#339933";
                             return true;
                         }
                             
                     }
                 }
-                Center.OpenColor = "Red";
+                Center.OpenColor = "#cc0000";
                 Center.OpenNow = "C";
 
                 return false;

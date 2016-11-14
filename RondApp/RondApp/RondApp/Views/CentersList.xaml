@@ -9,7 +9,6 @@
 
       <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,7,0">
         <Label x:Name="SearchResults" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"></Label>
-
         <BoxView Color="#009688" HeightRequest="2"  HorizontalOptions="Fill"></BoxView>
       </StackLayout>
       <ListView x:Name="centersList" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True">

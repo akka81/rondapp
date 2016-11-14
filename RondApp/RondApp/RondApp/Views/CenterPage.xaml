@@ -1,6 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RondApp.Views.CenterPage" NavigationPage.BackButtonTitle="" Icon="icon.png" BackgroundColor="White">
-  <Label Text="ciao" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" />
+             x:Class="RondApp.Views.CenterPage" NavigationPage.BackButtonTitle="Dettagli Centro" Title="Dettagli Centro" Icon="icon.png">
+
+
+  <StackLayout Orientation="Vertical">
+  <StackLayout x:Name="PageTitleArea" Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,0,0,0">
+    <StackLayout Padding="0,5,0,20" Orientation="Vertical">
+      <Label x:Name="CenterType" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
+    </StackLayout>
+    <Label x:Name="CenterName" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
+    <BoxView x:Name="CenterDarkAccent" HeightRequest="10" HorizontalOptions="FillAndExpand"/>
+  </StackLayout>
+   
+  <StackLayout x:Name="OpenStatus" Padding="0,10,0,10"  HorizontalOptions="Fill" Orientation="Vertical">
+    <Label x:Name="OpenStatusLbl" FontSize="Large" Text="APERTO" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
+  </StackLayout>
+
+    <ScrollView>
+<!-- address,reference. phone,services, notes --> 
+    <Grid x:Name="CenterDetailGrid" ColumnSpacing="2" RowSpacing="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"  />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Label Grid.Row="0" Grid.Column="0" Text="Riferimento:" FontAttributes="Bold"/>
+      <Label Grid.Row="1" Grid.Column="0" Text="Telefono:" FontAttributes="Bold"/>
+      <Label Grid.Row="2" Grid.Column="0" Text="Indirizzo:" FontAttributes="Bold"/>
+      <Label Grid.Row="3" Grid.Column="0" Text="Servizi:" FontAttributes="Bold"/>
+      <Label Grid.Row="4" Grid.Column="0" Text="{Binding Services}" Grid.ColumnSpan="2"/>
+      <Label Grid.Row="5" Grid.Column="0" Text="Note:" FontAttributes="Bold"/>
+      <Label Grid.Row="6" Grid.Column="0" Text="{Binding Notes}" Grid.ColumnSpan="2"/>
+      <Label Grid.Row="0" Grid.Column="1" Text="{Binding Reference}"></Label>
+      <Label Grid.Row="1" Grid.Column="1" Text="{Binding PhoneNumber}"></Label>
+      <Label Grid.Row="2" Grid.Column="1" Text="{Binding Address}"></Label>
+    </Grid>
+
+
+      
+
+      
+    </ScrollView>
+ 
+ </StackLayout>
+   
 </ContentPage>

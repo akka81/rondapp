@@ -34,16 +34,19 @@ namespace RondApp.Views
             centersList.ItemsSource = centers;
         }
 
-        private async void CentersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void CentersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-         
+
+            if (e.SelectedItem == null)
+                return;
+
 
             CenterDetailed selectedCenter = (CenterDetailed)((ListView)sender).SelectedItem;
+            
+            Navigation.PushAsync(new CenterPage(selectedCenter.ID));
             ((ListView)sender).SelectedItem = null;
 
-            await Navigation.PushAsync(new CenterPage(selectedCenter.ID));
-            
-           
+
         }
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)

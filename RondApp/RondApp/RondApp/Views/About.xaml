@@ -5,7 +5,7 @@
 
   <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
 
-    <Label FontSize="Large" Text="ronda carità e solidarietà Milano" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label FontSize="Large" Text="Ronda Carità e Solidarietà Milano" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
     <Image Source="rondaCarita.png"  VerticalOptions="Center" HorizontalOptions="Center" />
     <Label FontSize="Large" Text="RondApp" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
     <Label FontSize="Small" Text="v 1.0 (beta) Anakin" VerticalOptions="Center" HorizontalOptions="Center" />

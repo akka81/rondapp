@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RondApp.Entities
 {
-    class OpeningHoursDetailed : OpeningHours
+    public class OpeningHoursDetailed : OpeningHours
     {
 
         public String HoursLabel { get; set; }

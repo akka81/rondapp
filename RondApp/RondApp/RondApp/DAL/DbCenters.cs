@@ -15,9 +15,7 @@ namespace RondApp.DAL
         object locker = new object();
         public DbCenters()
         {
-            Database = DependencyService.Get<ISQlite>().GetConnection();
-
-          
+            Database = DependencyService.Get<ISQlite>().GetConnection();     
         }
 
         public void LoadDbData()
@@ -87,8 +85,6 @@ namespace RondApp.DAL
                     ID = 9,
                     Label = "Servizi Sociali Comune Milano"
                 });
-
-
             }
             #endregion
 
