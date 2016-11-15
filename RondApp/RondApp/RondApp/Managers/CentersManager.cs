@@ -24,8 +24,6 @@ namespace RondApp.Managers
         {
 
             List<CenterDetailed> Centers = this.dbConn.Query<CenterDetailed>("Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID");
-
-
             List<OpeningHoursDetailed> AllOpeningsHours = GetAllOpeningsHours();
 
             //set color
@@ -75,7 +73,10 @@ namespace RondApp.Managers
 
         public List<OpeningHoursDetailed> GetCenterOpeningsHours(int centerId)
         {
-            List<OpeningHoursDetailed> centerOpeningHours = this.dbConn.Query<OpeningHoursDetailed>("Select oh.*, h.Label as TypeName from TB_OPENING_HOURS oh LEFT JOIN TB_HOURS h ON oh.IDHours = h.ID where oh.IDCenter =?", centerId);
+            List<OpeningHoursDetailed> centerOpeningHours = this.dbConn.Query<OpeningHoursDetailed>("Select oh.*, h.Label as HoursLabel from TB_OPENING_HOURS oh LEFT JOIN TB_HOURS h ON oh.IDHours = h.ID where oh.IDCenter =?", centerId);
+
+
+
             return centerOpeningHours;
         }
 

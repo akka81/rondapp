@@ -89,19 +89,15 @@ namespace RondApp.Views
             }
         }
 
-        private async void CenterPin_Clicked(object sender, EventArgs e)
+        private void CenterPin_Clicked(object sender, EventArgs e)
         {
-         
-
+        
             DbCenters db = new DbCenters();
             //todo:place centers pins on map
             CentersManager cMng = new CentersManager(db.GetDatabaseConn());
-
             Pin SelectedPin = (Pin)sender;
 
-            await Navigation.PushAsync(new CenterPage(SelectedPin.Position.Latitude, SelectedPin.Position.Longitude));
-
-          
+            Navigation.PushAsync(new CenterPage(SelectedPin.Position.Latitude, SelectedPin.Position.Longitude));
         }
     }
 }

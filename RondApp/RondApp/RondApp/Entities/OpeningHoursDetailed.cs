@@ -11,5 +11,28 @@ namespace RondApp.Entities
     {
 
         public String HoursLabel { get; set; }
+
+        public String DaysLabel { get
+            {
+
+                List<string> days = new List<string>();
+                if (this.Monday)
+                    days.Add("Lun");
+                if (this.Tuesday)
+                    days.Add("Mar");
+                if (this.Wednesday)
+                    days.Add("Mer");
+                if (this.Thursday)
+                    days.Add("Gio");
+                if (this.Friday)
+                    days.Add("Ven");
+                if (this.Saturday)
+                    days.Add("Sab");
+                if (this.Sunday)
+                    days.Add("Dom");
+
+                return string.Join(", ",days);
+            }
+        }
     }
 }

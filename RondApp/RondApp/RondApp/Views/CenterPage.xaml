@@ -5,43 +5,75 @@
 
 
   <StackLayout Orientation="Vertical">
-  <StackLayout x:Name="PageTitleArea" Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,0,0,0">
-    <StackLayout Padding="0,5,0,20" Orientation="Vertical">
-      <Label x:Name="CenterType" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
+    <StackLayout x:Name="PageTitleArea" Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,0,0,0">
+      <StackLayout Padding="0,5,0,20" Orientation="Vertical">
+        <Label x:Name="CenterType" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
+      </StackLayout>
+      <Label x:Name="CenterName" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
+      <BoxView x:Name="CenterDarkAccent" HeightRequest="10" HorizontalOptions="FillAndExpand"/>
     </StackLayout>
-    <Label x:Name="CenterName" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
-    <BoxView x:Name="CenterDarkAccent" HeightRequest="10" HorizontalOptions="FillAndExpand"/>
-  </StackLayout>
-   
-  <StackLayout x:Name="OpenStatus" Padding="0,10,0,10"  HorizontalOptions="Fill" Orientation="Vertical">
-    <Label x:Name="OpenStatusLbl" FontSize="Large" Text="APERTO" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
-  </StackLayout>
+
+    <StackLayout x:Name="OpenStatus" Padding="0,10,0,10"  HorizontalOptions="Fill" Orientation="Vertical">
+      <Label x:Name="OpenStatusLbl" FontSize="Large" Text="APERTO" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
+    </StackLayout>
 
     <ScrollView>
-<!-- address,reference. phone,services, notes --> 
-    <Grid x:Name="CenterDetailGrid" ColumnSpacing="2" RowSpacing="0">
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"  />
-        <ColumnDefinition Width="*" />
-      </Grid.ColumnDefinitions>
-      <Label Grid.Row="0" Grid.Column="0" Text="Riferimento:" FontAttributes="Bold"/>
-      <Label Grid.Row="1" Grid.Column="0" Text="Telefono:" FontAttributes="Bold"/>
-      <Label Grid.Row="2" Grid.Column="0" Text="Indirizzo:" FontAttributes="Bold"/>
-      <Label Grid.Row="3" Grid.Column="0" Text="Servizi:" FontAttributes="Bold"/>
-      <Label Grid.Row="4" Grid.Column="0" Text="{Binding Services}" Grid.ColumnSpan="2"/>
-      <Label Grid.Row="5" Grid.Column="0" Text="Note:" FontAttributes="Bold"/>
-      <Label Grid.Row="6" Grid.Column="0" Text="{Binding Notes}" Grid.ColumnSpan="2"/>
-      <Label Grid.Row="0" Grid.Column="1" Text="{Binding Reference}"></Label>
-      <Label Grid.Row="1" Grid.Column="1" Text="{Binding PhoneNumber}"></Label>
-      <Label Grid.Row="2" Grid.Column="1" Text="{Binding Address}"></Label>
-    </Grid>
+      <StackLayout>
+        <Grid x:Name="CenterDetailGrid" ColumnSpacing="3" RowSpacing="10">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"  />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Label Grid.Row="0" Grid.Column="0" Text="Riferimento:" FontAttributes="Bold" FontSize="Medium"/>
+          <Label Grid.Row="1" Grid.Column="0" Text="Telefono:" FontAttributes="Bold"  FontSize="Medium"/>
+          <Label Grid.Row="2" Grid.Column="0" Text="Indirizzo:" FontAttributes="Bold"  FontSize="Medium"/>
+          <Label Grid.Row="3" Grid.Column="0" Text="Servizi:" FontAttributes="Bold"  FontSize="Medium"/>
+          <Label Grid.Row="4" Grid.Column="0" Text="{Binding Services}" Grid.ColumnSpan="2"  FontSize="Medium"/>
+          <Label Grid.Row="5" Grid.Column="0" Text="Note:" FontAttributes="Bold"  FontSize="Medium"/>
+          <Label Grid.Row="6" Grid.Column="0" Text="{Binding Notes}" Grid.ColumnSpan="2"  FontSize="Medium"/>
+          <Label Grid.Row="0" Grid.Column="1" Text="{Binding Reference}"  FontSize="Medium"></Label>
+          <Label Grid.Row="1" Grid.Column="1" Text="{Binding PhoneNumber}"  FontSize="Medium"></Label>
+          <Label Grid.Row="2" Grid.Column="1" Text="{Binding Address}"  FontSize="Medium"></Label>
+        </Grid>      
+      </StackLayout>
+    </ScrollView> 
+      <ListView x:Name="CenterHours" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True"  IsVisible="false">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,2,0">
+              <Grid Padding="5" ColumnSpacing="2" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="90"  />
+                  <ColumnDefinition Width="2"  />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label FontAttributes="Bold"  Grid.Row="0" Grid.Column="0" Text="{Binding HoursLabel}" VerticalTextAlignment="Center" Grid.RowSpan="2" BackgroundColor="#D3D3D3"></Label>
+                <Label Grid.Row="0" Grid.Column="1" BackgroundColor="#00BFFF" Grid.RowSpan="2"/>
+                <Label FontSize="Medium" Grid.Row="0" Grid.Column="2" Text="{Binding DaysLabel}"  VerticalTextAlignment="Start" FontAttributes="Bold" BackgroundColor="#e9e9e9"></Label>
+                <Label FontSize="Small" Grid.Row="1" Grid.Column="2" Text="{Binding Notes}" BackgroundColor="#e9e9e9"></Label>
+              </Grid>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <StackLayout Orientation="Horizontal"   HorizontalOptions="Center">
+      <Button x:Name="BtnInfo" Text="Info" Clicked="OnInfoClicked" IsVisible="false"></Button>
+      <Button x:Name="BtnHours" Text="Orari" Clicked="OnOrariClicked"></Button>
+      <Button x:Name="BtnCall" Text="Chiama"  Clicked="OnCallClicked" IsVisible="false"></Button>
+    </StackLayout>
+    <!-- call button -->
 
+  </StackLayout>
 
-      
-
-      
-    </ScrollView>
- 
- </StackLayout>
-   
 </ContentPage>
