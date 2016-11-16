@@ -48,10 +48,10 @@ namespace RondApp.Views
 
                 locator.DesiredAccuracy = 10;
                 locator.PositionChanged += Locator_PositionChanged;
-                var position = await locator.GetPositionAsync(10000);
+                //var position = await locator.GetPositionAsync(10000);
 
-                Xamarin.Forms.Maps.Position Pos = new Position(position.Latitude, position.Longitude); //37, -122);
-                myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(1)));
+                Xamarin.Forms.Maps.Position Pos = new Position(45.4773, 9.1815); //37, -122);
+                myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(5)));
                 DbCenters db = new DbCenters();
                 //todo:place centers pins on map
                 CentersManager cMng = new CentersManager(db.GetDatabaseConn());

@@ -10,13 +10,10 @@
         <Label x:Name="CenterType" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
       </StackLayout>
       <Label x:Name="CenterName" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
-      <BoxView x:Name="CenterDarkAccent" HeightRequest="10" HorizontalOptions="FillAndExpand"/>
+      <StackLayout x:Name="CenterDarkAccent" HeightRequest="30" HorizontalOptions="FillAndExpand">
+        <Label x:Name="OpenStatusLbl" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
+      </StackLayout>
     </StackLayout>
-
-    <StackLayout x:Name="OpenStatus" Padding="0,10,0,10"  HorizontalOptions="Fill" Orientation="Vertical">
-      <Label x:Name="OpenStatusLbl" FontSize="Large" Text="APERTO" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#FFFFFF" />
-    </StackLayout>
-
     <ScrollView>
       <StackLayout>
         <Grid x:Name="CenterDetailGrid" ColumnSpacing="3" RowSpacing="10">

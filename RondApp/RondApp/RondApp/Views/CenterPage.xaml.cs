@@ -54,8 +54,8 @@ namespace RondApp.Views
         private async void BindData(CenterDetailed center)
         {
             PageTitleArea.BackgroundColor = Color.FromHex(center.Color);
-            CenterDarkAccent.Color = Color.FromHex(center.ColorDark);
-            OpenStatus.BackgroundColor = Color.FromHex(center.OpenColor);
+            CenterDarkAccent.BackgroundColor = Color.FromHex(center.ColorDark);
+            //OpenStatus.BackgroundColor = Color.FromHex(center.OpenColor);
             CenterName.Text = center.Name;
             CenterType.Text = center.TypeName;
             OpenStatusLbl.Text = center.OpenNow == "A" ? "APERTO" : "CHIUSO";
