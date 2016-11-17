@@ -36,5 +36,12 @@ namespace RondApp.Models
 
         public string PhoneNumber { get; set; }
 
+
+        public string Origin { get; set; }
+        public string Gender { get; set; }
+        public int MinAge { get; set; }
+        public int MaxAge { get; set; }
+        public string Hygiene { get; set; }
+        public string Health { get; set; }
     }
 }
