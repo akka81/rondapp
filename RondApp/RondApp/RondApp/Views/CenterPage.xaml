@@ -15,7 +15,7 @@
       </StackLayout>
     </StackLayout>
     <ScrollView>
-      <StackLayout>
+      <StackLayout Padding="5">
         <Grid x:Name="CenterDetailGrid" ColumnSpacing="3" RowSpacing="10">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"  />
@@ -54,7 +54,9 @@
                   <ColumnDefinition Width="2"  />
                   <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+               
                 <Label FontAttributes="Bold"  Grid.Row="0" Grid.Column="0" Text="{Binding HoursLabel}" VerticalTextAlignment="Center" Grid.RowSpan="2" BackgroundColor="#D3D3D3"></Label>
+              
                 <Label Grid.Row="0" Grid.Column="1" BackgroundColor="#00BFFF" Grid.RowSpan="2"/>
                 <Label FontSize="Medium" Grid.Row="0" Grid.Column="2" Text="{Binding DaysLabel}"  VerticalTextAlignment="Start" FontAttributes="Bold" BackgroundColor="#e9e9e9"></Label>
                 <Label FontSize="Small" Grid.Row="1" Grid.Column="2" Text="{Binding Notes}" BackgroundColor="#e9e9e9"></Label>
