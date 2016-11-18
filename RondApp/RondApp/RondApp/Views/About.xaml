@@ -5,15 +5,15 @@
 
   <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
 
-    <Label FontSize="Large" Text="Ronda Carità e Solidarietà Milano" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label FontSize="Large" Text="Ronda Carità e Solidarietà Milano" TextColor="#3F51B5"  VerticalOptions="Center" HorizontalOptions="Center" />
     <Image Source="rondaCarita.png"  VerticalOptions="Center" HorizontalOptions="Center" />
-    <Label FontSize="Large" Text="RondApp" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label FontSize="Large" Text="RondApp" TextColor="#3F51B5"  VerticalOptions="Center" HorizontalOptions="Center" />
     <Label FontSize="Small" Text="v 1.0 (beta) Anakin" VerticalOptions="Center" HorizontalOptions="Center" />
 
     <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" Padding="0,20,0,20">
-      <Label FontSize="Large" Text="Developers" TextColor="#673AB7"  VerticalOptions="Center" HorizontalOptions="Center" />
-      <Label Text="Marco 'pignolini' Acchini" TextColor="#512DA8"  VerticalOptions="Center" HorizontalOptions="Center" />
-      <Label Text="Andrea 'biancio' Biancini" TextColor="#512DA8"  VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label FontSize="Large" Text="Developers" TextColor="#3F51B5"  VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label Text="Marco 'akka' Acchini" TextColor="#303F9F"  VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label Text="Andrea 'biancio' Biancini" TextColor="#303F9F"  VerticalOptions="Center" HorizontalOptions="Center" />
     </StackLayout>
 
     <Label FontSize="Small" Text="Feel free to contribute" VerticalOptions="Center" HorizontalOptions="Center" />
