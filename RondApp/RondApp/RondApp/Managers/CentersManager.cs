@@ -13,6 +13,58 @@ namespace RondApp.Managers
 {
     public class CentersManager
     {
+
+
+        public class CenterSearch
+        {
+            public CenterSearch(bool AndConcatenation = true)
+            {
+                this.Operator = AndConcatenation ? " and " : " or ";
+            }
+
+
+
+            public string Operator { get; set; }
+
+            private string origin;
+            public string Origin
+            {
+                get
+                {
+                    return string.IsNullOrEmpty(origin)? "" : $"Origin = {origin}";
+                }
+                set
+                {
+                    origin = value;
+                }
+            }
+            private string gender;
+            public string Gender { get; set; }
+            private string minAge;
+            public string MinAge { get; set; }
+            private string maxAge;
+            public string MaxAge { get; set; }
+            private string hygiene;
+            public string Hygiene { get; set; }
+            private string health;
+            public string Health { get; set; }
+
+
+            public string getWhereCondition(string tableAlias = "")
+            {
+
+                string Alias = string.IsNullOrWhiteSpace(tableAlias) ? "" :  tableAlias + ".";
+
+                String where = $"where {Alias}{Origin}{Operator}";
+
+                return where;
+
+            }
+
+        }
+
+
+
         SQLiteConnection dbConn;
         public CentersManager(SQLiteConnection dbConn)
         {
@@ -84,6 +136,8 @@ namespace RondApp.Managers
         {
             throw new NotImplementedException();
         }
+
+
 
         #region Private Methods
 

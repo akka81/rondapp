@@ -15,11 +15,17 @@ namespace RondApp.DAL
         object locker = new object();
         public DbCenters()
         {
-            Database = DependencyService.Get<ISQlite>().GetConnection();     
+            Database = DependencyService.Get<ISQlite>().GetConnection();
+
+            /*
+             * implements Database exists on platforms by checking file: if(File.Exists("database.db"))
+             * create method in ISQlite interface or load data only once
+             */
         }
 
         public void LoadDbData()
         {
+            
             //dropping tables
             Database.Execute("DROP TABLE IF EXISTS TB_OPENING_HOURS");
             Database.Execute("DROP TABLE IF EXISTS TB_TYPES");

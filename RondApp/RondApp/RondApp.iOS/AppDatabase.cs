@@ -24,6 +24,7 @@ namespace RondApp.iOS
             var conn = new SQLite.SQLiteConnection(path);
             // Return the database connection
             return conn;
+
         }
     }
 }

@@ -17,6 +17,8 @@ namespace RondApp.Droid
             // Create the connection
             var conn = new SQLite.SQLiteConnection(path);
             // Return the database connection
+
+            
             return conn;
         }
 
