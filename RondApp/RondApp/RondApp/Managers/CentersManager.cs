@@ -15,23 +15,25 @@ namespace RondApp.Managers
     {
 
 
-        public class CenterSearch
+        private class CenterSearch
         {
-            public CenterSearch(bool AndConcatenation = true)
+            public CenterSearch(bool andConcatenation = true, string tableAlias = "")
             {
-                this.Operator = AndConcatenation ? " and " : " or ";
+                this.Operator = andConcatenation ? " and " : " or ";
+                this.TableAlias = tableAlias + ".";
             }
 
 
 
-            public string Operator { get; set; }
+            private string Operator { get; set; }
+            private string TableAlias { get; set; }
 
             private string origin;
             public string Origin
             {
                 get
                 {
-                    return string.IsNullOrEmpty(origin)? "" : $"Origin = {origin}";
+                    return string.IsNullOrEmpty(origin) ? "" : $"{this.TableAlias}Origin = '{origin}'";
                 }
                 set
                 {
@@ -39,26 +41,87 @@ namespace RondApp.Managers
                 }
             }
             private string gender;
-            public string Gender { get; set; }
+            public string Gender
+            {
+                get
+                {
+                    return string.IsNullOrEmpty(gender) ? "" : $"{this.TableAlias}Gender = '{gender}'";
+                }
+                set
+                {
+                    gender = value;
+                }
+            }
             private string minAge;
-            public string MinAge { get; set; }
+            public string MinAge
+            {
+                get
+                {
+                    return string.IsNullOrEmpty(minAge) ? "" : $"{this.TableAlias}MinAge <= {minAge}";
+                }
+                set
+                {
+                    minAge = value;
+                }
+
+            }
             private string maxAge;
-            public string MaxAge { get; set; }
+            public string MaxAge
+            {
+                get
+                {
+                    return string.IsNullOrEmpty(maxAge) ? "" : $"{this.TableAlias}MaxAge >= {maxAge}";
+                }
+                set
+                {
+                    maxAge = value;
+                }
+            }
             private string hygiene;
-            public string Hygiene { get; set; }
+            public string Hygiene
+            {
+                get
+                {
+                    return string.IsNullOrEmpty(hygiene) ? "" : $"{this.TableAlias}Hygiene = '{hygiene}'";
+                }
+                set
+                {
+                    hygiene = value;
+                }
+
+            }
             private string health;
-            public string Health { get; set; }
+            public string Health
+            {
+                get
+                {
+                    return string.IsNullOrEmpty(health) ? "" : $"{this.TableAlias}Health = '{health}'";
+                }
+                set
+                {
+                    health = value;
+                }
+            }
 
 
-            public string getWhereCondition(string tableAlias = "")
+            public string getWhereCondition()
             {
 
-                string Alias = string.IsNullOrWhiteSpace(tableAlias) ? "" :  tableAlias + ".";
+                List<string> whereTokens = new List<string>();
+                if(!string.IsNullOrWhiteSpace(Origin))
+                    whereTokens.Add(Origin);
+                if (!string.IsNullOrWhiteSpace(Gender))
+                    whereTokens.Add(Gender);
+                if (!string.IsNullOrWhiteSpace(MaxAge))
+                    whereTokens.Add(MaxAge);
+                if (!string.IsNullOrWhiteSpace(MinAge))
+                    whereTokens.Add(MinAge);
+                if (!string.IsNullOrWhiteSpace(Hygiene))
+                    whereTokens.Add(Hygiene);
+                if (!string.IsNullOrWhiteSpace(Health))
+                    whereTokens.Add(Health);
 
-                String where = $"where {Alias}{Origin}{Operator}";
-
-                return where;
-
+                return $" where {string.Join(this.Operator, whereTokens)}";
             }
 
         }
@@ -85,8 +148,7 @@ namespace RondApp.Managers
                 SetCenterColor(centerDetailed);
 
                 isOpen = SetIsOpen(centerDetailed, AllOpeningsHours);
-                //centerDetailed.OpenNow = isOpen ? "A" : "C";
-                //centerDetailed.OpenColor = isOpen ? "Green" : "Red";
+
             }
             return Centers;
         }
@@ -126,15 +188,32 @@ namespace RondApp.Managers
         public List<OpeningHoursDetailed> GetCenterOpeningsHours(int centerId)
         {
             List<OpeningHoursDetailed> centerOpeningHours = this.dbConn.Query<OpeningHoursDetailed>("Select oh.*, h.Label as HoursLabel from TB_OPENING_HOURS oh LEFT JOIN TB_HOURS h ON oh.IDHours = h.ID where oh.IDCenter =?", centerId);
-
-
-
             return centerOpeningHours;
         }
 
-        public List<CenterDetailed> GetByCriteria()
+        public List<CenterDetailed> GetByCriteria(string Origin, string Gender,string Age, string Hygiene, string Health)
         {
-            throw new NotImplementedException();
+            CenterSearch centerSearch = new CenterSearch(true, "c");
+
+            centerSearch.Gender = Gender;
+            centerSearch.Origin = Origin;
+            centerSearch.MaxAge = Age;
+            centerSearch.MinAge = Age;
+            centerSearch.Hygiene = Hygiene;
+            centerSearch.Health = Health;
+
+            List<CenterDetailed> Centers = this.dbConn.Query<CenterDetailed>($"Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID{centerSearch.getWhereCondition()}");
+            List<OpeningHoursDetailed> AllOpeningsHours = GetAllOpeningsHours();
+
+            //set color
+            bool isOpen = false;
+            foreach (CenterDetailed centerDetailed in Centers)
+            {
+                SetCenterColor(centerDetailed);
+                isOpen = SetIsOpen(centerDetailed, AllOpeningsHours);
+            }
+
+            return Centers;
         }
 
 
@@ -161,7 +240,7 @@ namespace RondApp.Managers
                             Center.OpenColor = "#339933";
                             return true;
                         }
-                            
+
                     }
                 }
                 Center.OpenColor = "#cc0000";
@@ -173,7 +252,7 @@ namespace RondApp.Managers
             {
                 throw ex;
             }
-                     
+
         }
 
 
@@ -197,7 +276,7 @@ namespace RondApp.Managers
                 case 6:
                     return openingHoursDetailed.Saturday;
                 default:
-                    return false;          
+                    return false;
             }
 
         }
@@ -228,7 +307,7 @@ namespace RondApp.Managers
 
                 if (now >= startHour && now <= endHour)
                     TimeRangeCenters.Add(ohd);
-                   
+
             }
             return TimeRangeCenters;
         }

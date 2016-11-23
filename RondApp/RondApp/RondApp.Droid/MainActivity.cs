@@ -11,7 +11,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace RondApp.Droid
 {
-    [Activity(Label = "RondApp", MainLauncher = true,Theme = "@style/SplashTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation) ]
+    [Activity(Label = "RondApp", MainLauncher = true,Theme = "@style/SplashTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, NoHistory = true) ]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -32,6 +32,7 @@ namespace RondApp.Droid
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
     }
 }
 

@@ -32,5 +32,12 @@ namespace RondApp.Views
             }
         }
 
+
+        protected override bool OnBackButtonPressed()
+        {
+            return base.OnBackButtonPressed();
+            
+
+        }
     }  
 }

@@ -19,11 +19,16 @@ namespace RondApp.Views
         private SQLiteConnection db;
         protected List<CenterDetailed> centers;
 
-        public CentersList()
+        private void InitPage()
         {
             InitializeComponent();
 
             centersList.ItemSelected += CentersList_ItemSelected;
+        }
+
+        public CentersList()
+        {
+            InitPage();
             //get all Centers
             DbCenters db = new DbCenters();
             centersMng = new CentersManager(db.GetDatabaseConn());
@@ -33,6 +38,16 @@ namespace RondApp.Views
 
             centersList.ItemsSource = centers;
         }
+
+        public CentersList(List<CenterDetailed> centers)
+        {
+            InitPage();
+            this.centers = centers;
+            SearchResults.Text = $"Trovati {centers.Count} Centri";
+
+            centersList.ItemsSource = centers;
+        }
+
 
         private void CentersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
