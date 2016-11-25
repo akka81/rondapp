@@ -35,13 +35,16 @@ namespace RondApp.Views
             }
             AgeRangeEntry.TextChanged += AgeRangeEntry_TextChanged;
             SearchBtn.Clicked += SearchBtn_Clicked;
+            ResetBtn.Clicked += ResetBtn_Clicked;
         }
+
+      
 
         private void SearchBtn_Clicked(object sender, EventArgs e)
         {
+            NoResultsLbl.IsVisible = false;
             DbCenters db = new DbCenters();
             CentersManager centersMng = new CentersManager(db.GetDatabaseConn());
-
             
             string origin = OriginPicker.SelectedIndex >= 0 ? HelpValues.Origin.GetValue(OriginPicker.Items[OriginPicker.SelectedIndex]) : "";
             string gender = GenderPicker.SelectedIndex >= 0 ? HelpValues.Gender.GetValue(GenderPicker.Items[GenderPicker.SelectedIndex]) : "";
@@ -51,8 +54,10 @@ namespace RondApp.Views
 
             List <CenterDetailed> foundCenters = centersMng.GetByCriteria(origin,gender ,age, hygiene, health);
 
-            if(foundCenters.Count > 0)
+            if (foundCenters.Count > 0)
                 this.Navigation.PushAsync(new CentersList(foundCenters));
+            else
+                NoResultsLbl.IsVisible = true;
 
         }
         
@@ -64,7 +69,6 @@ namespace RondApp.Views
                 if (e.NewTextValue.Length > 3)
                     AgeRangeEntry.Text = e.NewTextValue.Substring(0, e.NewTextValue.Length - 2);
 
-
                 if (int.Parse(e.NewTextValue) > 100)
                     AgeRangeEntry.Text = "";
 
@@ -73,6 +77,14 @@ namespace RondApp.Views
 
             }
         }
-        
+
+        private void ResetBtn_Clicked(object sender, EventArgs e)
+        {
+            OriginPicker.SelectedIndex = -1;
+            GenderPicker.SelectedIndex = -1;
+            HygienePicker.SelectedIndex = -1;
+            HealthPicker.SelectedIndex = -1;
+        }
+
     }
 }

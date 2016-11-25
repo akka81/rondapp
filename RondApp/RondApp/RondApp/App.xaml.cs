@@ -13,12 +13,11 @@ namespace RondApp
     {
         public App()
         {
-            //Database Initializazion
             DbCenters DbMng = new DbCenters();
             DbMng.LoadDbData();
-
             //map page
-           MainPage = new Views.MainPage();
+            MainPage = new Views.MainPage();
         }
+
     }
 }

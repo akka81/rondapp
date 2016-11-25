@@ -43,11 +43,17 @@ namespace RondApp.Views
             List<CenterDetailed> centers = cMng.GetByCoordinates(Latitude, Longitude);
 
             //if more than one go to list
+            if (centers.Count() > 1)
+            {
+                this.Navigation.PushAsync(new CentersList(centers));
+            }
+            else
+            {
 
-            center = centers.First();
-            this.centerId = center.ID;
-            BindData(center);
-           
+                center = centers.First();
+                this.centerId = center.ID;
+                BindData(center);
+            }
         }
 
 
@@ -91,6 +97,7 @@ namespace RondApp.Views
 
         protected void OnOrariClicked(object sender, EventArgs e)
         {
+            NoHours.IsVisible = false;
             CenterHours.IsVisible = true;
             CenterDetailGrid.IsVisible = false;
           
@@ -99,6 +106,8 @@ namespace RondApp.Views
                 CentersManager cMng = new CentersManager(db.GetDatabaseConn());
                 List<OpeningHoursDetailed> centerOpenings = cMng.GetCenterOpeningsHours(this.centerId);
                 CenterHours.ItemsSource = centerOpenings;
+                if (centerOpenings.Count == 0)
+                    NoHours.IsVisible = true;
             }
 
             BtnInfo.IsVisible = true;

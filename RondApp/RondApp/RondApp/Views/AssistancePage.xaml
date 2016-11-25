@@ -11,14 +11,18 @@
     </StackLayout>
 
     <StackLayout Orientation="Vertical" Padding="20">
-
       <Picker x:Name="OriginPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand"  Title="Origine..."></Picker>
       <Picker x:Name="GenderPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand"  Title="Genere..."></Picker>
       <Picker x:Name="HygienePicker" SelectedIndex="0" HorizontalOptions="FillAndExpand"  Title="Igiene Personale..."></Picker>
       <Picker x:Name="HealthPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand"  Title="Problemi di salute..."></Picker>
       <Entry x:Name="AgeRangeEntry" Placeholder="età (0-100)" HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
 
-      <Button x:Name="SearchBtn" Text="Cerca" HorizontalOptions="FillAndExpand"/>
+      <StackLayout Orientation="Horizontal">
+        <Button x:Name="SearchBtn" Text="Cerca" HorizontalOptions="FillAndExpand"/>
+        <Button x:Name="ResetBtn" Text="Reset" HorizontalOptions="FillAndExpand"/>      
+      </StackLayout>
+
+      <Label x:Name="NoResultsLbl" FontSize="Medium" FontAttributes="Bold" IsVisible="false" Text="Non sono stati trovati centri compatibili"  HorizontalOptions="Center" />
     </StackLayout>
 
   </StackLayout>

@@ -37,7 +37,7 @@ namespace RondApp.Views
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "Lista Centri",
-                IconRes = "List.png",
+                IconRes = "list.png",
                 Description = "Visualizza l'elenco di tutti i centri",
                 ItemType = typeof(CentersList)
 

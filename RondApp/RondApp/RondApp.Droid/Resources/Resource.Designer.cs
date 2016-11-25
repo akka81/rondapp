@@ -2453,7 +2453,7 @@ namespace RondApp.Droid
 			public const int icon = 2130837694;
 			
 			// aapt resource value: 0x7f0200bf
-			public const int List = 2130837695;
+			public const int list = 2130837695;
 			
 			// aapt resource value: 0x7f0200c0
 			public const int map = 2130837696;

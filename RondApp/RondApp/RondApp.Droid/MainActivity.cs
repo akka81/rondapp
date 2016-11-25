@@ -17,15 +17,15 @@ namespace RondApp.Droid
         protected override void OnCreate(Bundle bundle)
         {
            
-
             FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
-
 
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Xamarin.FormsMaps.Init(this, bundle);
+
+     
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)

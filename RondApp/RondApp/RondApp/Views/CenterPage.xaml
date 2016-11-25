@@ -41,7 +41,8 @@
           <Label Grid.Row="2" Grid.Column="1" Text="{Binding Address}" FontSize="Medium"></Label>
         </Grid>      
       </StackLayout>
-    </ScrollView> 
+    </ScrollView>
+      <Label x:Name="NoHours" FontAttributes="Bold" IsVisible="false" Text="Non sono indicati gli orari per questo centro"  VerticalOptions="Center" HorizontalOptions="Center" />
       <ListView x:Name="CenterHours" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True"  IsVisible="false">
       <ListView.ItemTemplate>
         <DataTemplate>
