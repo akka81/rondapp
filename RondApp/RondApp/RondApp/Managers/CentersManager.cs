@@ -33,7 +33,7 @@ namespace RondApp.Managers
             {
                 get
                 {
-                    return string.IsNullOrEmpty(origin) ? "" : $"{this.TableAlias}Origin = '{origin}'";
+                    return string.IsNullOrEmpty(origin) ? "" : $"({this.TableAlias}Origin = '{origin}' or Origin = 'E')";
                 }
                 set
                 {
@@ -45,7 +45,7 @@ namespace RondApp.Managers
             {
                 get
                 {
-                    return string.IsNullOrEmpty(gender) ? "" : $"{this.TableAlias}Gender = '{gender}'";
+                    return string.IsNullOrEmpty(gender) ? "" : $"({this.TableAlias}Gender = '{gender}' or Gender = 'E')";
                 }
                 set
                 {
@@ -121,7 +121,8 @@ namespace RondApp.Managers
                 if (!string.IsNullOrWhiteSpace(Health))
                     whereTokens.Add(Health);
 
-                return $" where {string.Join(this.Operator, whereTokens)}";
+                
+                return whereTokens.Count >0 ? $" where {string.Join(this.Operator, whereTokens)}" : string.Empty;
             }
 
         }
