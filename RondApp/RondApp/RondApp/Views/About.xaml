@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RondApp.Views.About" Title="About">
-
+  <ScrollView>
   <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
 
     <Label FontSize="Large" Text="Ronda Carità e Solidarietà Milano" TextColor="#3F51B5"  VerticalOptions="Center" HorizontalOptions="Center" />
@@ -20,5 +20,5 @@
     <Label x:Name="gitHubLbl" FontSize="Small" Text="https://github.com/akka81/rondapp" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#448AFF" />
     
   </StackLayout>
- 
+  </ScrollView>
 </ContentPage>
