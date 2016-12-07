@@ -15,8 +15,8 @@ namespace RondApp
         {
             DbCenters DbMng = new DbCenters();
             DbMng.LoadDbData();
-            //map page
-            MainPage = new Views.MainPage();
+            //lisg page
+            MainPage = new Views.MainPage();         
         }
 
     }

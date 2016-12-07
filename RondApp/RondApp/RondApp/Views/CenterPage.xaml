@@ -64,7 +64,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <StackLayout Orientation="Horizontal"   HorizontalOptions="Center">
+    <StackLayout Orientation="Horizontal"   HorizontalOptions="FillAndExpand">
       <Button x:Name="BtnInfo" Text="Info" Clicked="OnInfoClicked" IsVisible="false" HorizontalOptions="FillAndExpand"></Button>
       <Button x:Name="BtnHours" Text="Orari" Clicked="OnOrariClicked" HorizontalOptions="FillAndExpand"></Button>
       <Button x:Name="BtnCall" Text="Chiama"  Clicked="OnCallClicked" IsVisible="false" HorizontalOptions="FillAndExpand"></Button>

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
+
 
 namespace RondApp.Views
 {
@@ -19,8 +19,7 @@ namespace RondApp.Views
             InitializeComponent();
             //navMenu = new NavigationMenu();
             navMenu.getNavigationListView.ItemSelected += OnItemSelected;
-            
-
+          
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -28,9 +27,9 @@ namespace RondApp.Views
             var item = e.SelectedItem as NavigationItem;
             if (item != null)
             {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.ItemType));
-              
-              
+                var navPage = new NavigationPage((Page)Activator.CreateInstance(item.ItemType));
+                navPage.AllowStateLoss = true;
+                Detail = navPage;
                 navMenu.getNavigationListView.SelectedItem = null;
                 IsPresented = false;
             }
