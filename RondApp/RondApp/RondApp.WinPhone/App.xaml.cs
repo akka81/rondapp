@@ -35,6 +35,8 @@ namespace RondApp.WinPhone
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+
+            Application.Current.RequestedTheme = ApplicationTheme.Light;
            
         }
 
