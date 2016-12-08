@@ -5,7 +5,8 @@
   <item>
     <bitmap
         android:gravity="center"
-        android:src="@drawable/rondaCarita"/>
+        android:scaleType="fitCenter"
+        android:src="@drawable/rondaCaritaSplash"/>
   </item>
 
 </layer-list>
