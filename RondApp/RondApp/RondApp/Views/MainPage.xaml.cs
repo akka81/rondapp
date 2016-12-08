@@ -27,9 +27,9 @@ namespace RondApp.Views
             var item = e.SelectedItem as NavigationItem;
             if (item != null)
             {
-                var navPage = new NavigationPage((Page)Activator.CreateInstance(item.ItemType));
-                navPage.AllowStateLoss = true;
-                Detail = navPage;
+                Detail = new NavigationPage((Page)Activator.CreateInstance(item.ItemType));
+                //navPage.AllowStateLoss = true;
+                //Detail = navPage;
                 navMenu.getNavigationListView.SelectedItem = null;
                 IsPresented = false;
             }
