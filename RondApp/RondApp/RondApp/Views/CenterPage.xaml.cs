@@ -141,8 +141,6 @@ namespace RondApp.Views
             if (!string.IsNullOrWhiteSpace(center.PhoneNumber) && granted)
                 BtnCall.IsVisible = true;
         }
+
     }
-
-
-
 }

@@ -18,6 +18,5 @@ namespace RondApp
             //lisg page
             MainPage = new Views.MainPage();         
         }
-
     }
 }
