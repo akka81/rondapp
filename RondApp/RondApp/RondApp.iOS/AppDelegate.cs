@@ -22,6 +22,21 @@ namespace RondApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+
+
+            UIWindow.Appearance.BackgroundColor = UIColor.FromRGB(245,245,245);
+            UIToolbar.Appearance.TintColor = UIColor.FromRGB(63, 81, 181);
+            UIToolbar.Appearance.BarTintColor = UIColor.White;
+            UINavigationBar.Appearance.TintColor = UIColor.FromRGB(63, 81, 181);
+            UINavigationBar.Appearance.BarTintColor = UIColor.White;
+
+            UIButton.Appearance.BackgroundColor = UIColor.FromRGB(3,169,244);
+            UIButton.Appearance.TintColor = UIColor.White;
+
+            UIButton.Appearance.SetTitleColor(UIColor.White, UIControlState.Normal);
+           
+
+
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsMaps.Init();
             LoadApplication(new App());
