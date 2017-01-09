@@ -6,7 +6,15 @@
              Icon="hamburger.png"
              Title="RondApp Menu">
   <ContentPage.Content>
-    <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#2E2E2E">
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" BackgroundColor="#2E2E2E">
+      <StackLayout.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color"
+                                Android="#2E2E2E"
+                                WinPhone="#2E2E2E"
+                                iOS="#2E2E2E">
+          
+        </OnPlatform>
+      </StackLayout.BackgroundColor>
       <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="2,10,2,10" BackgroundColor="#3D3D3D">
         <Image Source="rondaCarita.png"/>
       </StackLayout>
@@ -14,7 +22,7 @@
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
-              <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,2,15">
+              <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,2,15"  BackgroundColor="#2E2E2E">
                 <Grid Padding="5" ColumnSpacing="2" RowSpacing="0">
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="68"  />
