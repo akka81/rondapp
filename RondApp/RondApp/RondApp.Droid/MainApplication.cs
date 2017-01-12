@@ -11,8 +11,7 @@ namespace RondApp.Droid
     [Application]
     public class MainApplication : Application, Application.IActivityLifecycleCallbacks
     {
-        public MainApplication(IntPtr handle, JniHandleOwnership transer)
-          :base(handle, transer)
+        public MainApplication(IntPtr handle, JniHandleOwnership transer) :base(handle, transer)
         {
         }
 
@@ -36,10 +35,12 @@ namespace RondApp.Droid
 
         public void OnActivityDestroyed(Activity activity)
         {
+            // Do nothing
         }
 
         public void OnActivityPaused(Activity activity)
         {
+            // Do nothing
         }
 
         public void OnActivityResumed(Activity activity)
@@ -49,6 +50,7 @@ namespace RondApp.Droid
 
         public void OnActivitySaveInstanceState(Activity activity, Bundle outState)
         {
+            // Do nothing
         }
 
         public void OnActivityStarted(Activity activity)
@@ -58,6 +60,7 @@ namespace RondApp.Droid
 
         public void OnActivityStopped(Activity activity)
         {
+            // Do nothing
         }
     }
 }
