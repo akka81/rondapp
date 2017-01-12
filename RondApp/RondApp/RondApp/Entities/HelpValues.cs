@@ -8,7 +8,6 @@ namespace RondApp.Entities
 {
     public class HelpValues
     {
-
         public const int MinAge = 0;
         public const int MaxAge = 100;
 
@@ -44,29 +43,33 @@ namespace RondApp.Entities
                 genders.Add("Entrambi", "E");
             }
 
-
             public static string GetValue(string Key)
             {
                 return genders[Key];
             }
-            public static List<string> All() { return genders.Keys.ToList(); }
+
+            public static List<string> All()
+            {
+                return genders.Keys.ToList();
+            }
         }
 
         public static class Hygiene
         {
             static Dictionary<string, string> hygiene;
+
             static Hygiene()
             {
                 hygiene = new Dictionary<string, string>();
                 hygiene.Add("Si", "S");
                 hygiene.Add("No", "N");
-               
             }
 
             public static string GetValue(string Key)
             {
                 return hygiene[Key];
             }
+
             public static List<string> All() { return hygiene.Keys.ToList(); }
         }
 
@@ -84,7 +87,11 @@ namespace RondApp.Entities
             {
                 return health[Key];
             }
-            public static List<string> All() { return health.Keys.ToList(); }
+
+            public static List<string> All()
+            {
+                return health.Keys.ToList();
+            }
         }
 
     }

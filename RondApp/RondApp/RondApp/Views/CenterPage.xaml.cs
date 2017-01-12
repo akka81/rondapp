@@ -6,8 +6,6 @@ using RondApp.Managers;
 using RondApp.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -16,46 +14,26 @@ namespace RondApp.Views
 {
     public partial class CenterPage : ContentPage
     {
-
-        private int centerId;
         private DbCenters db = new DbCenters();
         private CenterDetailed center;
-        private Task t;
+     
         public  CenterPage(int centerId)
-        {
-            
+        {   
             InitializeComponent();
-            this.centerId = centerId;
-        
-            //todo:place centers pins on map
             CentersManager cMng = new CentersManager(db.GetDatabaseConn());
-            center = cMng.GetById(centerId);      
+
+            this.center = cMng.GetById(centerId);      
             BindData(center);
 
         }
 
-        public CenterPage(double Latitude, double Longitude)
+        public CenterPage(CenterDetailed center)
         {
-
             InitializeComponent();
-            //todo:place centers pins on map
-            CentersManager cMng = new CentersManager(db.GetDatabaseConn());
-            List<CenterDetailed> centers = cMng.GetByCoordinates(Latitude, Longitude);
 
-            //if more than one go to list
-            if (centers.Count() > 1)
-            {
-                this.Navigation.PushAsync(new CentersList(centers));
-            }
-            else
-            {
-
-                center = centers.First();
-                this.centerId = center.ID;
-                BindData(center);
-            }
+            this.center = center;
+            BindData(center);
         }
-
 
         private async void BindData(CenterDetailed center)
         {
@@ -80,12 +58,12 @@ namespace RondApp.Views
 
             if (status == PermissionStatus.Granted)
             {
-                setCallButtonVisible(true);
+                SetCallButtonVisible(true);
              
             }
             else if (status != PermissionStatus.Unknown)
             {
-                setCallButtonVisible(false);
+                SetCallButtonVisible(false);
                 //bind center data
                 CenterDetailGrid.BindingContext = center;
             }
@@ -104,7 +82,7 @@ namespace RondApp.Views
             if (CenterHours.ItemsSource == null)
             {
                 CentersManager cMng = new CentersManager(db.GetDatabaseConn());
-                List<OpeningHoursDetailed> centerOpenings = cMng.GetCenterOpeningsHours(this.centerId);
+                List<OpeningHoursDetailed> centerOpenings = cMng.GetCenterOpeningsHours(this.center.ID);
                 CenterHours.ItemsSource = centerOpenings;
                 if (centerOpenings.Count == 0)
                     NoHours.IsVisible = true;
@@ -117,7 +95,6 @@ namespace RondApp.Views
 
         protected void OnCallClicked(object sender, EventArgs e)
         {
-
             var dialer = DependencyService.Get<IDialer>();
             if (dialer != null)
             {
@@ -136,10 +113,12 @@ namespace RondApp.Views
 
         }
 
-        private void setCallButtonVisible(bool granted)
+        private void SetCallButtonVisible(bool granted)
         {
             if (!string.IsNullOrWhiteSpace(center.PhoneNumber) && granted)
+            {
                 BtnCall.IsVisible = true;
+            }
         }
 
     }

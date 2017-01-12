@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RondApp.Utils
 {
     public class Styles
     {
-
         public class CenterColor
         {
             public int ID { get; set; }
@@ -16,13 +12,9 @@ namespace RondApp.Utils
             public string ColorDark { get; set; }
         }
 
-      
-
         public static class CentersColors
         {
-
             private static List<CenterColor> centersColorsList;
-
 
             static CentersColors()
             {

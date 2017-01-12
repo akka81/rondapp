@@ -1,20 +1,15 @@
 ﻿using RondApp.Entities;
-using RondApp.Models;
 using RondApp.Utils;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static RondApp.Utils.Styles;
 
 namespace RondApp.Managers
 {
     public class CentersManager
     {
-
-
         private class CenterSearch
         {
             public CenterSearch(bool andConcatenation = true, string tableAlias = "")
@@ -23,12 +18,12 @@ namespace RondApp.Managers
                 this.TableAlias = tableAlias + ".";
             }
 
-
-
             private string Operator { get; set; }
+
             private string TableAlias { get; set; }
 
             private string origin;
+
             public string Origin
             {
                 get
@@ -40,7 +35,9 @@ namespace RondApp.Managers
                     origin = value;
                 }
             }
+
             private string gender;
+
             public string Gender
             {
                 get
@@ -52,6 +49,7 @@ namespace RondApp.Managers
                     gender = value;
                 }
             }
+
             private string minAge;
             public string MinAge
             {
@@ -65,6 +63,7 @@ namespace RondApp.Managers
                 }
 
             }
+
             private string maxAge;
             public string MaxAge
             {
@@ -77,6 +76,7 @@ namespace RondApp.Managers
                     maxAge = value;
                 }
             }
+
             private string hygiene;
             public string Hygiene
             {
@@ -90,6 +90,7 @@ namespace RondApp.Managers
                 }
 
             }
+
             private string health;
             public string Health
             {
@@ -103,31 +104,40 @@ namespace RondApp.Managers
                 }
             }
 
-            public string getWhereCondition()
+            public string GetWhereCondition()
             {
-
                 List<string> whereTokens = new List<string>();
-                if(!string.IsNullOrWhiteSpace(Origin))
+                if (!string.IsNullOrWhiteSpace(Origin))
+                {
                     whereTokens.Add(Origin);
+                }
                 if (!string.IsNullOrWhiteSpace(Gender))
+                {
                     whereTokens.Add(Gender);
+                }
                 if (!string.IsNullOrWhiteSpace(MaxAge))
+                {
                     whereTokens.Add(MaxAge);
+                }
                 if (!string.IsNullOrWhiteSpace(MinAge))
+                {
                     whereTokens.Add(MinAge);
+                }
                 if (!string.IsNullOrWhiteSpace(Hygiene))
+                {
                     whereTokens.Add(Hygiene);
+                }
                 if (!string.IsNullOrWhiteSpace(Health))
+                {
                     whereTokens.Add(Health);
+                }
 
-                return whereTokens.Count >0 ? $" where {string.Join(this.Operator, whereTokens)}" : string.Empty;
+                return (whereTokens.Count > 0) ? $" where {string.Join(this.Operator, whereTokens)}" : string.Empty;
             }
 
         }
 
-
-
-        SQLiteConnection dbConn;
+        readonly SQLiteConnection dbConn;
         public CentersManager(SQLiteConnection dbConn)
         {
             this.dbConn = dbConn;
@@ -136,18 +146,14 @@ namespace RondApp.Managers
 
         public List<CenterDetailed> All()
         {
-
             List<CenterDetailed> Centers = this.dbConn.Query<CenterDetailed>("Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID");
             List<OpeningHoursDetailed> AllOpeningsHours = GetAllOpeningsHours();
 
             //set color
-            bool isOpen = false;
             foreach (CenterDetailed centerDetailed in Centers)
             {
                 SetCenterColor(centerDetailed);
-
-                isOpen = SetIsOpen(centerDetailed, AllOpeningsHours);
-
+                SetIsOpen(centerDetailed, AllOpeningsHours);
             }
             return Centers;
         }
@@ -155,7 +161,6 @@ namespace RondApp.Managers
 
         public List<CenterDetailed> GetByCoordinates(double Latitude, double Longitude)
         {
-
             List<CenterDetailed> Centers = this.dbConn.Query<CenterDetailed>("Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID where c.Latitude = ? and c.Longitude = ?", Latitude, Longitude);
 
             List<OpeningHoursDetailed> AllOpeningsHours = GetAllOpeningsHours();
@@ -201,61 +206,48 @@ namespace RondApp.Managers
             centerSearch.Hygiene = Hygiene;
             centerSearch.Health = Health;
 
-            List<CenterDetailed> Centers = this.dbConn.Query<CenterDetailed>($"Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID{centerSearch.getWhereCondition()}");
+            List<CenterDetailed> Centers = this.dbConn.Query<CenterDetailed>($"Select c.*, t.Label as TypeName from TB_CENTERS c LEFT JOIN TB_TYPES t ON c.IDType = t.ID{centerSearch.GetWhereCondition()}");
             List<OpeningHoursDetailed> AllOpeningsHours = GetAllOpeningsHours();
 
             //set color
-            bool isOpen = false;
             foreach (CenterDetailed centerDetailed in Centers)
             {
                 SetCenterColor(centerDetailed);
-                isOpen = SetIsOpen(centerDetailed, AllOpeningsHours);
+                SetIsOpen(centerDetailed, AllOpeningsHours);
             }
 
             return Centers;
         }
 
-
-
         #region Private Methods
-
-        private bool SetIsOpen(CenterDetailed Center, List<OpeningHoursDetailed> AllOpeningsHours)
+        private Boolean SetIsOpen(CenterDetailed Center, List<OpeningHoursDetailed> AllOpeningsHours)
         {
-            try
+            List<OpeningHoursDetailed> CenterOpeningsHours = AllOpeningsHours.Where(op => op.IDCenter == Center.ID).ToList();
+
+            //check if there is a center open in the current time
+            List<OpeningHoursDetailed> CenterOpenedNow = GetTimeRangeCenter(CenterOpeningsHours);
+
+            //check if the center opened in the current time, if any, is opened in the current day
+            if (CenterOpenedNow.Count > 0)
             {
-                List<OpeningHoursDetailed> CenterOpeningsHours = AllOpeningsHours.Where(op => op.IDCenter == Center.ID).ToList();
-
-                //check if there is a center open in the current time
-                List<OpeningHoursDetailed> CenterOpenedNow = GetTimeRangeCenter(CenterOpeningsHours);
-
-                //check if the center opened in the current time, if any, is opened in the current day
-                if (CenterOpenedNow.Count > 0)
+                foreach (OpeningHoursDetailed ohd in CenterOpenedNow)
                 {
-                    foreach (OpeningHoursDetailed ohd in CenterOpenedNow)
+                    if (IsOpeningDay(ohd))
                     {
-                        if (isOpeningDay(ohd))
-                        {
-                            Center.OpenNow = "A";
-                            Center.OpenColor = "#339933";
-                            return true;
-                        }
-
+                        Center.OpenNow = "A";
+                        Center.OpenColor = "#339933";
+                        return true;
                     }
+
                 }
-                Center.OpenColor = "#cc0000";
-                Center.OpenNow = "C";
-
-                return false;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            Center.OpenColor = "#cc0000";
+            Center.OpenNow = "C";
 
+            return false;
         }
 
-
-        private bool isOpeningDay(OpeningHoursDetailed openingHoursDetailed)
+        private bool IsOpeningDay(OpeningHoursDetailed openingHoursDetailed)
         {
 
             switch ((int)DateTime.Now.DayOfWeek)

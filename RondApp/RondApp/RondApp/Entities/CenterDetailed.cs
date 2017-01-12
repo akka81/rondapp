@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RondApp.Models;
+﻿using RondApp.Models;
 
 namespace RondApp.Entities
 {
@@ -12,6 +7,7 @@ namespace RondApp.Entities
         public string TypeName { get; set; }
 
         public string Color { get; set; }
+
         public string ColorDark { get; set; }
 
         public string OpenNow { get; set; }

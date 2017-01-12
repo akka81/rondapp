@@ -9,10 +9,6 @@ namespace RondApp.DAL
 {
     public interface ISQlite
     {
-
         SQLite.SQLiteConnection GetConnection();
-
-      
-
     }
 }

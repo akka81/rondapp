@@ -3,10 +3,6 @@ using RondApp.Entities;
 using RondApp.Managers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 namespace RondApp.Views
@@ -67,13 +63,19 @@ namespace RondApp.Views
             if (!string.IsNullOrWhiteSpace(e.NewTextValue))
             {
                 if (e.NewTextValue.Length > 3)
+                {
                     AgeRangeEntry.Text = e.NewTextValue.Substring(0, e.NewTextValue.Length - 2);
+                }
 
                 if (int.Parse(e.NewTextValue) > 100)
+                {
                     AgeRangeEntry.Text = "";
+                }
 
                 if (int.Parse(e.NewTextValue) < 0)
+                {
                     AgeRangeEntry.Text = "";
+                }
 
             }
         }

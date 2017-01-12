@@ -14,9 +14,7 @@ namespace RondApp.Views
 {
     public partial class CentersList : ContentPage
     {
-
         private CentersManager centersMng;
-        private SQLiteConnection db;
         protected List<CenterDetailed> centers;
 
         private void InitPage()
@@ -51,17 +49,15 @@ namespace RondApp.Views
 
         private void CentersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
             if (e.SelectedItem == null)
+            {
                 return;
-
+            }
 
             CenterDetailed selectedCenter = (CenterDetailed)((ListView)sender).SelectedItem;
             
             Navigation.PushAsync(new CenterPage(selectedCenter.ID));
             ((ListView)sender).SelectedItem = null;
-
-
         }
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
