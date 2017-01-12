@@ -103,7 +103,6 @@ namespace RondApp.Managers
                 }
             }
 
-
             public string getWhereCondition()
             {
 
@@ -121,7 +120,6 @@ namespace RondApp.Managers
                 if (!string.IsNullOrWhiteSpace(Health))
                     whereTokens.Add(Health);
 
-                
                 return whereTokens.Count >0 ? $" where {string.Join(this.Operator, whereTokens)}" : string.Empty;
             }
 

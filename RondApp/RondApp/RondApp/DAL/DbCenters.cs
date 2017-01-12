@@ -3,8 +3,6 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace RondApp.DAL
@@ -14,6 +12,8 @@ namespace RondApp.DAL
         SQLiteConnection Database;
         object locker = new object();
         ISQlite db;
+        static int dbVersion = 1;
+
         public DbCenters()
         {
            db = DependencyService.Get<ISQlite>();
@@ -22,30 +22,31 @@ namespace RondApp.DAL
 
         public void LoadDbData()
         {
-            bool dbExists = false;
-          
-
-            try
+            if (RecreateDB())
             {
-                if(Database.Table<Center>().ToList().Count>0) dbExists = true;
-
-            }
-            catch (Exception){}
-
-            if (!dbExists)
-            {
-              
                 //dropping tables
+                Database.Execute("DROP TABLE IF EXISTS TB_DBVERSION");
                 Database.Execute("DROP TABLE IF EXISTS TB_OPENING_HOURS");
                 Database.Execute("DROP TABLE IF EXISTS TB_TYPES");
                 Database.Execute("DROP TABLE IF EXISTS TB_CENTERS");
                 Database.Execute("DROP TABLE IF EXISTS TB_OPENING_HOURS");
 
                 //create tables       
+                Database.CreateTable<DBVersion>();
                 Database.CreateTable<Hours>();
                 Database.CreateTable<CenterType>();
                 Database.CreateTable<OpeningHours>();
                 Database.CreateTable<Center>();
+
+                #region DBVersion
+                if (Database.Table<CenterType>().Count() == 0)
+                {
+                    Database.Insert(new DBVersion
+                    {
+                        ID = dbVersion
+                    });
+                }
+                #endregion
 
                 #region CenterType
                 if (Database.Table<CenterType>().Count() == 0)
@@ -585,9 +586,39 @@ namespace RondApp.DAL
         }
 
         #region Private methods
+        private Boolean RecreateDB()
+        {
+            try
+            {
+                if (Database.Table<Center>().ToList().Count <= 0 || Database.Table<DBVersion>().ToList().Count <= 0)
+                {
+                    // No center in DB or no DBVersion registered
+                    return true;
+                }
+
+                // check version
+                foreach (DBVersion curVersion in Database.Table<DBVersion>().ToList())
+                {
+                    if (curVersion.ID == dbVersion)
+                    {
+                        // Current DB version in DBVersion table
+                        return false;
+                    }
+                }
+
+                // The current DB version is not foundin DBVersion table
+                return true;
+            }
+            catch (Exception)
+            {
+                // If exception DB not existent
+                return true;
+            }
+        }
+
         private int AddCenter(Center newCenter)
         {
-             Database.Insert(newCenter);
+            Database.Insert(newCenter);
             return newCenter.ID;
         }
 
