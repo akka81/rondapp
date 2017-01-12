@@ -1,25 +1,15 @@
 ﻿using RondApp.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
 
 namespace RondApp.Views
 {
     public partial class MainPage : MasterDetailPage
     {
-        //NavigationMenu navMenu;
-
         public MainPage()
         {
             InitializeComponent();
-            //navMenu = new NavigationMenu();
-            navMenu.getNavigationListView.ItemSelected += OnItemSelected;
-          
+            navMenu.GetNavigationListView.ItemSelected += OnItemSelected;
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -28,12 +18,9 @@ namespace RondApp.Views
             if (item != null)
             {
                 Detail = new NavigationPage((Page)Activator.CreateInstance(item.ItemType));
-                //navPage.AllowStateLoss = true;
-                //Detail = navPage;
-                navMenu.getNavigationListView.SelectedItem = null;
+                navMenu.GetNavigationListView.SelectedItem = null;
                 IsPresented = false;
             }
         }
-
     }  
 }

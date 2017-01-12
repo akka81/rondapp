@@ -59,7 +59,6 @@ namespace RondApp.Views
         
         private void AgeRangeEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
-
             if (!string.IsNullOrWhiteSpace(e.NewTextValue))
             {
                 if (e.NewTextValue.Length > 3)
@@ -87,6 +86,5 @@ namespace RondApp.Views
             HygienePicker.SelectedIndex = -1;
             HealthPicker.SelectedIndex = -1;
         }
-
     }
 }

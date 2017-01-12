@@ -24,9 +24,8 @@ namespace RondApp.Views
 
             this.center = cMng.GetById(centerId);      
             BindData(center);
-
         }
-
+    
         public CenterPage(CenterDetailed center)
         {
             InitializeComponent();
@@ -39,7 +38,6 @@ namespace RondApp.Views
         {
             PageTitleArea.BackgroundColor = Color.FromHex(center.Color);
             CenterDarkAccent.BackgroundColor = Color.FromHex(center.ColorDark);
-            //OpenStatus.BackgroundColor = Color.FromHex(center.OpenColor);
             CenterName.Text = center.Name;
             CenterType.Text = center.TypeName;
             OpenStatusLbl.Text = center.OpenNow == "A" ? "APERTO" : "CHIUSO";
@@ -70,7 +68,6 @@ namespace RondApp.Views
 
             //bind center data
             CenterDetailGrid.BindingContext = center;
-
         }
 
         protected void OnOrariClicked(object sender, EventArgs e)

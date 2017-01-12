@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace RondApp.Views
@@ -12,11 +7,11 @@ namespace RondApp.Views
     {
         public List<Models.NavigationItem> navListItems = new List<Models.NavigationItem>();
 
-        public ListView getNavigationListView { get { return navList; } }
+        public ListView GetNavigationListView { get { return navList; } }
+
         public NavigationMenu()
         {
             InitializeComponent();
-
 
             navListItems.Add(new Models.NavigationItem
             {

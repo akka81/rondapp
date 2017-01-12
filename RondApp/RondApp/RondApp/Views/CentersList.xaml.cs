@@ -1,12 +1,7 @@
 ﻿using RondApp.Managers;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using SQLite;
 using RondApp.DAL;
 using RondApp.Entities;
 
@@ -62,7 +57,6 @@ namespace RondApp.Views
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-
             centersList.BeginRefresh();
             var FoundCenters = centers.Where(c => c.Name.ToLower().Contains(e.NewTextValue) || c.TypeName.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
 
@@ -72,8 +66,5 @@ namespace RondApp.Views
             centersList.EndRefresh();
 
         }
-
     }
-
-
 }

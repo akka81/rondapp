@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Plugin.Geolocator;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -10,24 +7,19 @@ using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using RondApp.Managers;
 using RondApp.DAL;
-using RondApp.Models;
 using RondApp.Entities;
 
 namespace RondApp.Views
 {
     public partial class MapPage : ContentPage
     {
-
         public MapPage()
         {
-           
-
             GetCurrentPositionAsync();
         }
 
         public async void GetCurrentPositionAsync()
         {
-           
             var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
             if (status != PermissionStatus.Granted)
             {
@@ -48,11 +40,11 @@ namespace RondApp.Views
 
                 locator.DesiredAccuracy = 10;
                 locator.PositionChanged += Locator_PositionChanged;
-                //var position = await locator.GetPositionAsync(10000);
 
-                Xamarin.Forms.Maps.Position Pos = new Position(45.4773, 9.1815); //37, -122);
+                Xamarin.Forms.Maps.Position Pos = new Position(45.4773, 9.1815);
                 myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(5)));
                 DbCenters db = new DbCenters();
+
                 //todo:place centers pins on map
                 CentersManager cMng = new CentersManager(db.GetDatabaseConn());
                 this.SetMapPins(cMng.All());
@@ -61,15 +53,12 @@ namespace RondApp.Views
             else if (status != PermissionStatus.Unknown)
             {
                 await DisplayAlert("Location Denied", "Can not continue, try again.", "OK");
-               
             }          
         }
-
       
         private void Locator_PositionChanged(object sender, Plugin.Geolocator.Abstractions.PositionEventArgs e)
         {
-            
-            Xamarin.Forms.Maps.Position Pos = new Position(e.Position.Latitude, e.Position.Longitude); //37, -122);
+            Xamarin.Forms.Maps.Position Pos = new Position(e.Position.Latitude, e.Position.Longitude);
             myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(1)));
         }
 
@@ -91,7 +80,6 @@ namespace RondApp.Views
 
         private void CenterPin_Clicked(object sender, EventArgs e)
         {
-        
             DbCenters db = new DbCenters();
             //todo:place centers pins on map
             CentersManager cMng = new CentersManager(db.GetDatabaseConn());
