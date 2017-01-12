@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Android.App;
 
@@ -7,9 +6,9 @@ using Android.App;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("RondApp.Droid")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Applicazione per la Ronda della Carità e della Solidarità")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ronda della Carità e della Solidarietà")]
 [assembly: AssemblyProduct("RondApp.Droid")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
