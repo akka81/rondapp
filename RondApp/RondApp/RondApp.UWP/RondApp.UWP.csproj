@@ -109,6 +109,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.png" />
+    <Content Include="Assets\Badge.scale-100.jpg" />
+    <Content Include="Assets\Badge.scale-125.jpg" />
+    <Content Include="Assets\Badge.scale-150.jpg" />
+    <Content Include="Assets\Badge.scale-200.jpg" />
+    <Content Include="Assets\Badge.scale-400.jpg" />
+    <Content Include="Assets\SplashScreen.scale-100.jpg" />
+    <Content Include="Assets\SplashScreen.scale-125.jpg" />
+    <Content Include="Assets\SplashScreen.scale-150.jpg" />
+    <Content Include="Assets\SplashScreen.scale-200.jpg" />
+    <Content Include="Assets\SplashScreen.scale-400.jpg" />
     <Content Include="help.png" />
     <Content Include="icon.png" />
     <Content Include="List.png" />
@@ -148,7 +158,6 @@
     <Content Include="Assets\RondaLogoStore.scale-150.jpg" />
     <Content Include="Assets\RondaLogoStore.scale-200.jpg" />
     <Content Include="Assets\RondaLogoStore.scale-400.jpg" />
-    <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="rondaCarita.png" />
   </ItemGroup>
