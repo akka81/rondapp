@@ -18,7 +18,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>RondApp.UWP_StoreKey.pfx</PackageCertificateKeyFile>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
     <PackageCertificateThumbprint>5015CA55BFA017A957BDB1B3134AFCF0CBE7CA8B</PackageCertificateThumbprint>
@@ -115,11 +115,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.png" />
-    <Content Include="Assets\Badge.scale-100.jpg" />
-    <Content Include="Assets\Badge.scale-125.jpg" />
-    <Content Include="Assets\Badge.scale-150.jpg" />
-    <Content Include="Assets\Badge.scale-200.jpg" />
-    <Content Include="Assets\Badge.scale-400.jpg" />
+    <Content Include="Assets\Badge.scale-100.png" />
+    <Content Include="Assets\Badge.scale-125.png" />
+    <Content Include="Assets\Badge.scale-150.png" />
+    <Content Include="Assets\Badge.scale-200.png" />
+    <Content Include="Assets\Badge.scale-400.png" />
     <Content Include="Assets\SplashScreen.scale-100.jpg" />
     <Content Include="Assets\SplashScreen.scale-125.jpg" />
     <Content Include="Assets\SplashScreen.scale-150.jpg" />
