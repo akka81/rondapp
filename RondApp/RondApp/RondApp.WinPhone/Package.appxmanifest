@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="e8ebdf4c-1a3c-4b54-919a-429e98e93142" Publisher="CN=joaqu" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="e8ebdf4c-1a3c-4b54-919a-429e98e93142" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="12365AndreaBiancini.RondApp" Publisher="CN=4A7DB48F-6E45-4A04-B531-9704C904B9A1" Version="1.1.0.1" />
+  <mp:PhoneIdentity PhoneProductId="8c816ee7-56a0-4871-8017-bae7097337b0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>FPCL.Windows8.WindowsPhone</DisplayName>
-    <PublisherDisplayName>joaqu</PublisherDisplayName>
+    <DisplayName>RondApp</DisplayName>
+    <PublisherDisplayName>Andrea Biancini</PublisherDisplayName>
     <Logo>Assets\StoreLogo.jpg</Logo>
   </Properties>
   <Prerequisites>
