@@ -18,7 +18,7 @@
       <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="2,10,2,10" BackgroundColor="#3D3D3D">
         <Image Source="rondaCarita.png"/>
       </StackLayout>
-      <ListView x:Name="navList" VerticalOptions="FillAndExpand" SeparatorVisibility="Default" SeparatorColor="#FFFFFF"   HasUnevenRows="True">
+      <ListView x:Name="navList" VerticalOptions="FillAndExpand" SeparatorVisibility="Default" SeparatorColor="#FFFFFF" HasUnevenRows="True">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
