@@ -7,7 +7,8 @@ namespace RondApp
     {
         public App()
         {
-            DbCenters DbMng = new DbCenters();
+            InitializeComponent();
+           DbCenters DbMng = new DbCenters();
             DbMng.LoadDbData();
             MainPage = new Views.MainPage();
         }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="12365AndreaBiancini.RondApp" Publisher="CN=4A7DB48F-6E45-4A04-B531-9704C904B9A1" Version="1.1.0.1" />
+  <Identity Name="12365AndreaBiancini.RondApp" Publisher="CN=4A7DB48F-6E45-4A04-B531-9704C904B9A1" Version="1.1.0.2" />
   <mp:PhoneIdentity PhoneProductId="8c816ee7-56a0-4871-8017-bae7097337b0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>RondApp</DisplayName>
