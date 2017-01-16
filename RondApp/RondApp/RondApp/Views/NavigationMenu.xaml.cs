@@ -46,6 +46,9 @@ namespace RondApp.Views
             });
 
             navList.ItemsSource = navListItems;
+
+            Device.OnPlatform(iOS: () => navList.SeparatorVisibility = SeparatorVisibility.None);
+
         }
     }
 }
