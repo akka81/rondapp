@@ -13,13 +13,14 @@ namespace RondApp.Views
         {
             InitializeComponent();
 
+            Device.OnPlatform(iOS: () => navList.SeparatorVisibility = SeparatorVisibility.None);
+
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "Assistenza",
                 IconRes = "help.png", 
                 Description = "Cerca il centro adeguato",
                 ItemType = typeof(AssistancePage)
-
             });
             navListItems.Add(new Models.NavigationItem
             {
@@ -27,7 +28,6 @@ namespace RondApp.Views
                 IconRes = "map.png", 
                 Description = "Visualizza i centri sulla mappa",
                 ItemType = typeof(MapPage)
-
             });
             navListItems.Add(new Models.NavigationItem
             {
@@ -35,20 +35,17 @@ namespace RondApp.Views
                 IconRes = "list.png",
                 Description = "Visualizza l'elenco di tutti i centri",
                 ItemType = typeof(CentersList)
-
             });
             navListItems.Add(new Models.NavigationItem
             {
                 Title = "About",
                 IconRes = "about.png",
                 ItemType = typeof(About)
-
             });
 
             navList.ItemsSource = navListItems;
 
             Device.OnPlatform(iOS: () => navList.SeparatorVisibility = SeparatorVisibility.None);
-
         }
     }
 }

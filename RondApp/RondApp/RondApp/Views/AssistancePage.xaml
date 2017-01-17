@@ -6,7 +6,6 @@
   <ScrollView>
   <StackLayout Orientation="Vertical">
 
-
     <StackLayout Padding="20" Orientation="Vertical">
       <Label Text="Trova il centro adeguato in base ai criteri" HorizontalOptions="Center"></Label>
     </StackLayout>
@@ -19,11 +18,11 @@
       <Entry x:Name="AgeRangeEntry" Placeholder="età (0-100)" HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
 
       <StackLayout Orientation="Horizontal">
-        <Button x:Name="SearchBtn" Text="Cerca" HorizontalOptions="FillAndExpand"/>
-        <Button x:Name="ResetBtn" Text="Reset" HorizontalOptions="FillAndExpand"/>      
+        <Button x:Name="SearchBtn" Text="Cerca" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}"/>
+        <Button x:Name="ResetBtn" Text="Reset" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}"/>      
       </StackLayout>
 
-      <Label x:Name="NoResultsLbl" FontSize="Medium" FontAttributes="Bold" IsVisible="false" Text="Non sono stati trovati centri compatibili"  HorizontalOptions="Center" />
+      <Label x:Name="NoResultsLbl" FontSize="{StaticResource MediumFontSize}" FontAttributes="Bold" IsVisible="false" Text="Non sono stati trovati centri compatibili" HorizontalOptions="Center" />
     </StackLayout>
 
   </StackLayout>

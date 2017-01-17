@@ -18,16 +18,16 @@
               <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,2,0">
                 <Grid Padding="5" ColumnSpacing="2" RowSpacing="0">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="8"  />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="30"/>
                   </Grid.ColumnDefinitions>
 
                   <Label Grid.Row="0" Grid.Column="0" BackgroundColor="{Binding ColorDark}" Grid.RowSpan="2">
                   </Label>
-                  <Label FontAttributes="Bold"  Grid.Row="0" Grid.Column="1" Text="{Binding Name}"  VerticalTextAlignment="Start" VerticalOptions="FillAndExpand" BackgroundColor="#FFF"></Label>
-                  <Label FontSize="Small" Grid.Row="1" Grid.Column="1" Text="{Binding TypeName}"  VerticalTextAlignment="Center" BackgroundColor="#FFF"></Label>
-                  <Label FontSize="Medium" Grid.Row="0" Grid.Column="2" Text="{Binding OpenNow}" FontAttributes="Bold" Grid.RowSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="{Binding OpenColor}" TextColor="#FFF"></Label>
+                  <Label FontSize="{StaticResource MediumFontSize}" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"  VerticalTextAlignment="Start" VerticalOptions="FillAndExpand" BackgroundColor="#FFF"></Label>
+                  <Label FontSize="{StaticResource SmallFontSize}" Grid.Row="1" Grid.Column="1" Text="{Binding TypeName}"  VerticalTextAlignment="Center" BackgroundColor="#FFF"></Label>
+                  <Label FontSize="{StaticResource LargeFontSize}" Grid.Row="0" Grid.Column="2" Text="{Binding OpenNow}" FontAttributes="Bold" Grid.RowSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="{Binding OpenColor}" TextColor="#FFF"></Label>
 
                 </Grid>
               </StackLayout>

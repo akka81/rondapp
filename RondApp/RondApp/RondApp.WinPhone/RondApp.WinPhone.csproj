@@ -99,6 +99,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.png" />
     <Content Include="Assets\Badge.scale-100.jpg" />
     <Content Include="Assets\Badge.scale-140.jpg" />
     <Content Include="Assets\Badge.scale-240.jpg" />
@@ -123,7 +124,7 @@
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="help.png" />
     <Content Include="icon.png" />
-    <Content Include="List.png" />
+    <Content Include="list.png" />
     <Content Include="map.png" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="rondaCarita.png" />
