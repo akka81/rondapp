@@ -18,8 +18,8 @@
       <Entry x:Name="AgeRangeEntry" Placeholder="età (0-100)" HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
 
       <StackLayout Orientation="Horizontal">
-        <Button x:Name="SearchBtn" Text="Cerca" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}"/>
-        <Button x:Name="ResetBtn" Text="Reset" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}"/>      
+        <Button x:Name="SearchBtn" Text="Cerca" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}"/>
+        <Button x:Name="ResetBtn" Text="Reset" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}"/>      
       </StackLayout>
 
       <Label x:Name="NoResultsLbl" FontSize="{StaticResource MediumFontSize}" FontAttributes="Bold" IsVisible="false" Text="Non sono stati trovati centri compatibili" HorizontalOptions="Center" />

@@ -5,17 +5,11 @@
     xmlns:light="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light">
   <Application.Resources>
     <ResourceDictionary>
-      <OnPlatform x:TypeArguments="x:Double" Android="20" iOS="20" WinPhone="20" x:Key="LargeFontSize" />
-      <OnPlatform x:TypeArguments="x:Double" Android="18" iOS="18" WinPhone="18" x:Key="MediumFontSize" />
-      <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" WinPhone="16" x:Key="SmallFontSize" />
-      <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14" WinPhone="14" x:Key="XSmallFontSize" />
-      
       <Style x:Key="buttonStyle" TargetType="Button">
         <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
         <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         <Setter Property="TextColor" Value="#FFFFFF" />
         <Setter Property="BackgroundColor" Value="#03A9F4" />
-        <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
       </Style>
     </ResourceDictionary> 
   </Application.Resources>

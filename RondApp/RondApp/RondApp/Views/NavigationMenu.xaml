@@ -20,7 +20,7 @@
                       <ColumnDefinition Width="68"  />
                       <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Image Source="{Binding IconRes}"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+                    <Image Source="{Binding IconRes}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
                     <Label FontSize="{StaticResource LargeFontSize}" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" VerticalTextAlignment="Center" TextColor="#FFFFFF"></Label>
                     <Label FontSize="{StaticResource XSmallFontSize}" Grid.Row="1" Grid.Column="1" Text="{Binding Description}" VerticalTextAlignment="Center" TextColor="#FFFFFF"></Label>
                   </Grid>

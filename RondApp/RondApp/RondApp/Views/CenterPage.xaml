@@ -65,13 +65,11 @@
       </ListView.ItemTemplate>
     </ListView>
     <StackLayout Orientation="Horizontal"   HorizontalOptions="FillAndExpand" Padding="5,5,5,5">
-      <Button x:Name="BtnInfo" Text="Info" Clicked="OnInfoClicked" IsVisible="false" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}">
-      </Button>
-      <Button x:Name="BtnHours" Text="Orari" Clicked="OnOrariClicked" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}"></Button>
-      <Button x:Name="BtnCall" Text="Chiama" Clicked="OnCallClicked" IsVisible="false" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}"></Button>
+      <Button x:Name="BtnInfo" Text="Info" Clicked="OnInfoClicked" IsVisible="false" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}"></Button>
+      <Button x:Name="BtnHours" Text="Orari" Clicked="OnOrariClicked" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}"></Button>
+      <Button x:Name="BtnCall" Text="Chiama" Clicked="OnCallClicked" IsVisible="false" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}"></Button>
     </StackLayout>
     <!-- call button -->
 
   </StackLayout>
-
 </ContentPage>
