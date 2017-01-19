@@ -13,11 +13,11 @@
             <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
           <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="2"/>
           </Grid.RowDefinitions>
           
-          <Label Grid.Row="0" Grid.Column="0" x:Name="SearchResults" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+          <Label Grid.Row="0" Grid.Column="0" x:Name="SearchResults" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="{StaticResource SmallFontSize}"></Label>
           <Button Grid.Row="0" Grid.Column="1" x:Name="BtnViewMap" Text="Mappa" Clicked="OnViewMapClicked" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}" HorizontalOptions="End"></Button>
           <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Color="#009688" HeightRequest="2" HorizontalOptions="Fill"></BoxView>
         </Grid>

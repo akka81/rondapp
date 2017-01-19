@@ -27,7 +27,7 @@ namespace RondApp.WinPhone
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
-            Xamarin.FormsMaps.Init("AoH3vcFwH0jioRwBMbnnDwFmlJ8mqSvjMhcKHRolXePkQd_KP7u6t9L_tpkVOXXy");
+            Xamarin.FormsMaps.Init("DOwE9c04FYANowXYO9hi~ZYjofh9rVDSPWP9-oRetBg~AuQh1S2XTqR1npW1wBJ5v3s9lPoOO-lwl-MOcbZetnEp0Sq2C3yGdWVna2KYjk71");
             LoadApplication(new RondApp.App());
         }
 
