@@ -7,7 +7,6 @@ using Android.App;
 // associated with an assembly.
 [assembly: AssemblyTitle("RondApp.Droid")]
 [assembly: AssemblyProduct("RondApp.Droid")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyDescription("Applicazione per i volontari serali di Ronda")]
 [assembly: AssemblyConfiguration("release")]
 [assembly: AssemblyCompany("Ronda della Carità e della Solidarietà")]

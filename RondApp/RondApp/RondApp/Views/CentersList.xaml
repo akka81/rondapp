@@ -7,9 +7,16 @@
       <SearchBar Placeholder="Ricerca..." TextChanged="SearchBar_OnTextChanged" HeightRequest="50" HorizontalTextAlignment="Start"></SearchBar>
 
       <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,7,0">
-        <Label x:Name="SearchResults" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"></Label>
-        <Button x:Name="BtnViewMap" Text="Mappa" Clicked="OnViewMapClicked" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}" HorizontalOptions="EndAndExpand"></Button>
-        <BoxView Color="#009688" HeightRequest="2" HorizontalOptions="Fill"></BoxView>
+        <Grid Padding="0" ColumnSpacing="0" RowSpacing="0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          
+          <Label Grid.Row="0" Grid.Column="0" x:Name="SearchResults" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+          <Button Grid.Row="0" Grid.Column="1"  x:Name="BtnViewMap" Text="Mappa" Clicked="OnViewMapClicked" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}" HorizontalOptions="End"></Button>
+          <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Color="#009688" HeightRequest="2" HorizontalOptions="Fill"></BoxView>
+        </Grid>
       </StackLayout>
       <ListView x:Name="centersList" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True" BackgroundColor="#F5F5F5">
         <ListView.ItemTemplate>
@@ -23,12 +30,10 @@
                     <ColumnDefinition Width="30"/>
                   </Grid.ColumnDefinitions>
 
-                  <Label Grid.Row="0" Grid.Column="0" BackgroundColor="{Binding ColorDark}" Grid.RowSpan="2">
-                  </Label>
+                  <Label Grid.Row="0" Grid.Column="0" BackgroundColor="{Binding ColorDark}" Grid.RowSpan="2"></Label>
                   <Label FontSize="{StaticResource MediumFontSize}" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"  VerticalTextAlignment="Start" VerticalOptions="FillAndExpand" BackgroundColor="#FFF"></Label>
                   <Label FontSize="{StaticResource SmallFontSize}" Grid.Row="1" Grid.Column="1" Text="{Binding TypeName}"  VerticalTextAlignment="Center" BackgroundColor="#FFF"></Label>
                   <Label FontSize="{StaticResource LargeFontSize}" Grid.Row="0" Grid.Column="2" Text="{Binding OpenNow}" FontAttributes="Bold" Grid.RowSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="{Binding OpenColor}" TextColor="#FFF"></Label>
-
                 </Grid>
               </StackLayout>
             </ViewCell>
