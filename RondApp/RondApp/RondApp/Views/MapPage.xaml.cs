@@ -15,10 +15,24 @@ namespace RondApp.Views
     {
         public MapPage()
         {
-            GetCurrentPositionAsync();
+            DbCenters db = new DbCenters();
+            CentersManager cMng = new CentersManager(db.GetDatabaseConn());
+            GetCurrentPositionAsync(cMng.All());
         }
 
-        public async void GetCurrentPositionAsync()
+        public MapPage(CenterDetailed center)
+        {
+            List<CenterDetailed> centers = new List<CenterDetailed>();
+            centers.Add(center);
+            GetCurrentPositionAsync(centers);
+        }
+
+        public MapPage(List<CenterDetailed> centers)
+        {
+            GetCurrentPositionAsync(centers);
+        }
+
+        public async void GetCurrentPositionAsync(List<CenterDetailed> centers)
         {
             var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
             if (status != PermissionStatus.Granted)
@@ -43,12 +57,8 @@ namespace RondApp.Views
 
                 Xamarin.Forms.Maps.Position Pos = new Position(45.4773, 9.1815);
                 myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(5)));
-                DbCenters db = new DbCenters();
 
-                //todo:place centers pins on map
-                CentersManager cMng = new CentersManager(db.GetDatabaseConn());
-                this.SetMapPins(cMng.All());
-
+                this.SetMapPins(centers);
             }
             else if (status != PermissionStatus.Unknown)
             {

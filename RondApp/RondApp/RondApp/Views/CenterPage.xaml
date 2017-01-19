@@ -19,6 +19,7 @@
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
           </Grid.ColumnDefinitions>
           <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -37,8 +38,9 @@
           <Label Grid.Row="5" Grid.Column="0" Text="Note:" FontAttributes="Bold" FontSize="{StaticResource SmallFontSize}"/>
           <Label Grid.Row="6" Grid.Column="0" Text="{Binding Notes}" Grid.ColumnSpan="2" FontSize="{StaticResource SmallFontSize}"/>
           <Label Grid.Row="0" Grid.Column="1" Text="{Binding Reference}" FontSize="{StaticResource SmallFontSize}"></Label>
-          <Label Grid.Row="1" Grid.Column="1" Text="{Binding PhoneNumber}" FontSize="{StaticResource SmallFontSize}"></Label>
+          <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding PhoneNumber}" FontSize="{StaticResource SmallFontSize}"></Label>
           <Label Grid.Row="2" Grid.Column="1" Text="{Binding Address}" FontSize="{StaticResource SmallFontSize}"></Label>
+          <Button Grid.Row="2" Grid.Column="2" x:Name="BtnViewMap" Text="Mappa" Clicked="OnViewMapClicked" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}"></Button>
         </Grid>      
       </StackLayout>
     </ScrollView>

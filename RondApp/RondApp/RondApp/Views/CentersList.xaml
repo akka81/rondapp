@@ -4,12 +4,12 @@
              x:Class="RondApp.Views.CentersList" Title="Lista Centri">
   <ContentPage.Content>
     <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-
       <SearchBar Placeholder="Ricerca..." TextChanged="SearchBar_OnTextChanged" HeightRequest="50" HorizontalTextAlignment="Start"></SearchBar>
 
       <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,2,7,0">
         <Label x:Name="SearchResults" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"></Label>
-        <BoxView Color="#009688" HeightRequest="2"  HorizontalOptions="Fill"></BoxView>
+        <Button x:Name="BtnViewMap" Text="Mappa" Clicked="OnViewMapClicked" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}" HorizontalOptions="EndAndExpand"></Button>
+        <BoxView Color="#009688" HeightRequest="2" HorizontalOptions="Fill"></BoxView>
       </StackLayout>
       <ListView x:Name="centersList" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True" BackgroundColor="#F5F5F5">
         <ListView.ItemTemplate>

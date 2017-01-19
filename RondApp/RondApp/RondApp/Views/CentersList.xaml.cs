@@ -12,6 +12,7 @@ namespace RondApp.Views
     {
         private CentersManager centersMng;
         protected List<CenterDetailed> centers;
+        protected List<CenterDetailed> filteredCenters;
 
         private void InitPage()
         {
@@ -30,6 +31,7 @@ namespace RondApp.Views
             centers = centersMng.All();
             SearchResults.Text = $"Trovati {centers.Count} Centri";
 
+            filteredCenters = centers;
             centersList.ItemsSource = centers;
         }
 
@@ -37,8 +39,9 @@ namespace RondApp.Views
         {
             InitPage();
             this.centers = centers;
-            SearchResults.Text = $"Trovati {centers.Count} Centri";
+            filteredCenters = centers;
 
+            SearchResults.Text = $"Trovati {centers.Count} Centri";
             centersList.ItemsSource = centers;
         }
 
@@ -51,7 +54,6 @@ namespace RondApp.Views
             }
 
             CenterDetailed selectedCenter = (CenterDetailed)((ListView)sender).SelectedItem;
-            
             Navigation.PushAsync(new CenterPage(selectedCenter.ID));
             ((ListView)sender).SelectedItem = null;
         }
@@ -59,13 +61,16 @@ namespace RondApp.Views
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             centersList.BeginRefresh();
-            var FoundCenters = centers.Where(c => c.Name.ToLower().Contains(e.NewTextValue) || c.TypeName.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
+            filteredCenters = centers.Where(c => c.Name.ToLower().Contains(e.NewTextValue) || c.TypeName.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
 
-            SearchResults.Text = $"Trovati {FoundCenters.Count} Centri";
-            centersList.ItemsSource = FoundCenters;
-
+            SearchResults.Text = $"Trovati {filteredCenters.Count} Centri";
+            centersList.ItemsSource = filteredCenters;
             centersList.EndRefresh();
+        }
 
+        protected void OnViewMapClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MapPage(filteredCenters));
         }
     }
 }

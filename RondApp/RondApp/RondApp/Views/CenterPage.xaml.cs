@@ -82,7 +82,9 @@ namespace RondApp.Views
                 List<OpeningHoursDetailed> centerOpenings = cMng.GetCenterOpeningsHours(this.center.ID);
                 CenterHours.ItemsSource = centerOpenings;
                 if (centerOpenings.Count == 0)
+                {
                     NoHours.IsVisible = true;
+                }
             }
 
             BtnInfo.IsVisible = true;
@@ -107,7 +109,6 @@ namespace RondApp.Views
            
             CenterHours.IsVisible = false;
             CenterDetailGrid.IsVisible = true;
-
         }
 
         private void SetCallButtonVisible(bool granted)
@@ -118,5 +119,9 @@ namespace RondApp.Views
             }
         }
 
+        protected void OnViewMapClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MapPage(center));
+        }
     }
 }
