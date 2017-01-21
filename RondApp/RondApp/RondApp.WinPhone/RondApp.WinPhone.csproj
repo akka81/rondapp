@@ -139,6 +139,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="InTheHand.Forms.Maps.Platform.WinRT, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\InTheHand.Forms.Maps.Platform.WinRT.2.1.16.419\lib\wpa81\InTheHand.Forms.Maps.Platform.WinRT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\wpa81\Plugin.Geolocator.dll</HintPath>
       <Private>True</Private>
@@ -180,11 +184,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Maps, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.3.3.180\lib\wpa81\Xamarin.Forms.Maps.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Maps.WinRT.Phone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.3.3.180\lib\wpa81\Xamarin.Forms.Maps.WinRT.Phone.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.1.0.6529\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
