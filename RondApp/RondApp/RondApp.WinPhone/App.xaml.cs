@@ -60,7 +60,7 @@ namespace RondApp.WinPhone
                 rootFrame.CacheSize = 1;
 
                 Xamarin.Forms.Forms.Init(e);
-                InTheHand.FormsMaps.Init();
+                InTheHand.FormsMaps.Init("DOwE9c04FYANowXYO9hi~ZYjofh9rVDSPWP9-oRetBg~AuQh1S2XTqR1npW1wBJ5v3s9lPoOO-lwl-MOcbZetnEp0Sq2C3yGdWVna2KYjk71");
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
