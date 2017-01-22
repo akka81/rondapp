@@ -55,7 +55,7 @@ namespace RondApp.Views
                 locator.DesiredAccuracy = 10;
                 locator.PositionChanged += Locator_PositionChanged;
 
-                Xamarin.Forms.Maps.Position Pos = new Position(45.4773, 9.1815);
+                Position Pos = new Position(45.4773, 9.1815);
                 myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(5)));
 
                 this.SetMapPins(centers);
@@ -68,7 +68,7 @@ namespace RondApp.Views
       
         private void Locator_PositionChanged(object sender, Plugin.Geolocator.Abstractions.PositionEventArgs e)
         {
-            Xamarin.Forms.Maps.Position Pos = new Position(e.Position.Latitude, e.Position.Longitude);
+            Position Pos = new Position(e.Position.Latitude, e.Position.Longitude);
             myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(1)));
         }
 

@@ -127,6 +127,7 @@
     <Content Include="icon.png" />
     <Content Include="list.png" />
     <Content Include="map.png" />
+    <Content Include="zone.png" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="rondaCarita.png" />
   </ItemGroup>

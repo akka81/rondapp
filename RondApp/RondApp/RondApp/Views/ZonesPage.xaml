@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:utils="clr-namespace:RondApp.Utils;assembly=RondApp"
+             x:Class="RondApp.Views.ZonesPage" Title="Mappa Zone Milano">
+
+  <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5">
+    <Picker x:Name="ZonePicker" SelectedIndex="0" HorizontalOptions="FillAndExpand" Title="Scegli zona..."></Picker>
+    <utils:ZoneMap VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+        x:Name="myMap"
+        IsShowingUser="true"
+        MapType="Street"/>
+  </StackLayout>
+
+</ContentPage>

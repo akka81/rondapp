@@ -43,7 +43,8 @@
         <image name="Icon-76.png" width="76" height="76"/>
         <image name="Icon-Small-40.png" width="40" height="40"/>
         <image name="Icon-Small.png" width="29" height="29"/>
-        <image name="List.png" width="24" height="24"/>
+        <image name="list.png" width="24" height="24"/>
+        <image name="zone.png" width="24" height="24"/>
         <image name="map.png" width="24" height="24"/>
         <image name="rondaCarita.png" width="150" height="150"/>
     </resources>

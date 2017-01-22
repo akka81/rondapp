@@ -17,10 +17,10 @@ namespace RondApp.Views
 
             navListItems.Add(new Models.NavigationItem
             {
-                Title = "Assistenza",
-                IconRes = "help.png", 
-                Description = "Cerca il centro adeguato",
-                ItemType = typeof(AssistancePage)
+                Title = "Zone Milano",
+                IconRes = "zone.png",
+                Description = "Mostra le zone di intervento",
+                ItemType = typeof(ZonesPage)
             });
             navListItems.Add(new Models.NavigationItem
             {
@@ -35,6 +35,13 @@ namespace RondApp.Views
                 IconRes = "list.png",
                 Description = "Visualizza l'elenco di tutti i centri",
                 ItemType = typeof(CentersList)
+            });
+            navListItems.Add(new Models.NavigationItem
+            {
+                Title = "Assistenza",
+                IconRes = "help.png",
+                Description = "Cerca il centro adeguato",
+                ItemType = typeof(AssistancePage)
             });
             navListItems.Add(new Models.NavigationItem
             {
