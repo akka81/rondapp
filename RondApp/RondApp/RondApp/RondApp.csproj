@@ -43,6 +43,7 @@
     <Compile Include="Entities\HelpValues.cs" />
     <Compile Include="Entities\OpeningHoursDetailed.cs" />
     <Compile Include="Managers\CentersManager.cs" />
+    <Compile Include="Models\Segnalazione.cs" />
     <Compile Include="Models\DBVersion.cs" />
     <Compile Include="Models\Center.cs" />
     <Compile Include="Entities\CenterDetailed.cs" />

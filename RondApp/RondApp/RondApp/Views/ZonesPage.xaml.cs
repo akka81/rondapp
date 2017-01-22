@@ -5,21 +5,41 @@ using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using SharpKml.Base;
 using SharpKml.Dom;
-
+using RondApp.Models;
 using System;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Net;
+using System.IO;
+using System.Text;
 
 namespace RondApp.Views
 {
     public partial class ZonesPage : ContentPage
     {
         Document docKml;
+        List<Segnalazione> segnalazioni;
+
         public ZonesPage()
         {
             InitializeComponent();
+
             InitializePicker();
+            GetSegnalazioni();
             GetCurrentPositionAsync();
+        }
+
+        public void GetSegnalazioni()
+        {
+            var webClient = new WebClient();
+
+            webClient.DownloadStringCompleted += (s, e) => {
+                var text = e.Result; // get the downloaded text
+                
+            };
+            var url = new Uri("https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo?1m6&1m2&1d45.448210178053415&2d9.143269606046829&2m2&1d45.48403894278448&2d9.194123336632856&2u12&4sit&5e2&7b0&8e0&callback=xdc.qa2sy6&token=103580");
+            webClient.Encoding = Encoding.UTF8;
+            webClient.DownloadStringAsync(url);
         }
 
         public void InitializePicker()
@@ -93,6 +113,8 @@ namespace RondApp.Views
 
                 Position Pos = new Position(45.4773, 9.1815);
                 myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(5)));
+
+                this.SetMapPins(segnalazioni);
             }
             else if (status != PermissionStatus.Unknown)
             {
@@ -104,6 +126,21 @@ namespace RondApp.Views
         {
             Position Pos = new Position(e.Position.Latitude, e.Position.Longitude);
             myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(1)));
+        }
+
+        private void SetMapPins(List<Segnalazione> segnalazioni)
+        {
+            foreach (Segnalazione seg in segnalazioni)
+            {
+                Pin centerPin = new Pin
+                {
+                    Label = seg.Name + "\n" + seg.Description,
+                    Position = new Position(seg.Latitude, seg.Longitude),
+                    Type = PinType.Place
+                };
+                //centerPin.Clicked += CenterPin_Clicked;
+                myMap.Pins.Add(centerPin);
+            }
         }
     }
 }
