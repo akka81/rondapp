@@ -6,6 +6,7 @@ using MapKit;
 using UIKit;
 using Xamarin.Forms.Platform.iOS;
 using CoreLocation;
+using System.ComponentModel;
 
 [assembly: ExportRenderer(typeof(ZoneMap), typeof(CustomMapRenderer))]
 namespace RondApp.iOS
@@ -17,7 +18,6 @@ namespace RondApp.iOS
         protected override void OnElementChanged(ElementChangedEventArgs<View> e)
         {
             base.OnElementChanged(e);
-            Element.PropertyChanged += (s_, e_) => SetNeedsDisplay();
 
             if (e.OldElement != null)
             {
@@ -27,26 +27,40 @@ namespace RondApp.iOS
 
             if (e.NewElement != null)
             {
-                var formsMap = (ZoneMap)e.NewElement;
-                var nativeMap = Control as MKMapView;
+                UpdateMap((ZoneMap)e.NewElement);
+            }
+        }
 
-                nativeMap.OverlayRenderer = GetOverlayRenderer;
-                nativeMap.RemoveOverlays();
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
 
-                if (formsMap.ShapeCoordinates.Count > 0)
-                { 
-                    CLLocationCoordinate2D[] coords = new CLLocationCoordinate2D[formsMap.ShapeCoordinates.Count];
+            if (e.PropertyName == "ShapeCoordinates")
+            {
+                UpdateMap((ZoneMap)sender);
+            }
+        }
 
-                    int index = 0;
-                    foreach (var position in formsMap.ShapeCoordinates)
-                    {
-                        coords[index] = new CLLocationCoordinate2D(position.Latitude, position.Longitude);
-                        index++;
-                    }
+        private void UpdateMap(ZoneMap formsMap)
+        {
+            var nativeMap = Control as MKMapView;
 
-                    var blockOverlay = MKPolygon.FromCoordinates(coords);
-                    nativeMap.AddOverlay(blockOverlay);
+            nativeMap.OverlayRenderer = GetOverlayRenderer;
+            nativeMap.RemoveOverlays();
+
+            if (formsMap.ShapeCoordinates.Count > 0)
+            {
+                CLLocationCoordinate2D[] coords = new CLLocationCoordinate2D[formsMap.ShapeCoordinates.Count];
+
+                int index = 0;
+                foreach (var position in formsMap.ShapeCoordinates)
+                {
+                    coords[index] = new CLLocationCoordinate2D(position.Latitude, position.Longitude);
+                    index++;
                 }
+
+                var blockOverlay = MKPolygon.FromCoordinates(coords);
+                nativeMap.AddOverlay(blockOverlay);
             }
         }
 

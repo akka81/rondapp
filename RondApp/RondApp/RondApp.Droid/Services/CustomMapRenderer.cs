@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
+using System.ComponentModel;
 
 [assembly: ExportRenderer(typeof(ZoneMap), typeof(CustomMapRenderer))]
 namespace RondApp.Droid
@@ -29,6 +30,19 @@ namespace RondApp.Droid
             if (e.NewElement != null)
             {
                 var formsMap = (ZoneMap)e.NewElement;
+                shapeCoordinates = formsMap.ShapeCoordinates;
+
+                ((MapView)Control).GetMapAsync(this);
+            }
+        }
+
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+            if (e.PropertyName == "ShapeCoordinates")
+            {
+                var formsMap = (ZoneMap)sender;
                 shapeCoordinates = formsMap.ShapeCoordinates;
 
                 ((MapView)Control).GetMapAsync(this);
