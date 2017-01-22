@@ -1,6 +1,7 @@
 ﻿using RondApp.UWP;
 using Xamarin.Forms.Platform.UWP;
 using RondApp.Utils;
+using RondApp.Models;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Maps.UWP;
 using Windows.UI.Xaml.Controls.Maps;

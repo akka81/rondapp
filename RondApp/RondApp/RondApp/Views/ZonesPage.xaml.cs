@@ -9,37 +9,72 @@ using RondApp.Models;
 using System;
 using System.Reflection;
 using System.Collections.Generic;
-using System.Net;
-using System.IO;
-using System.Text;
+using System.Net.Http;
 
 namespace RondApp.Views
 {
     public partial class ZonesPage : ContentPage
     {
         Document docKml;
-        List<Segnalazione> segnalazioni;
 
         public ZonesPage()
         {
             InitializeComponent();
 
             InitializePicker();
-            GetSegnalazioni();
             GetCurrentPositionAsync();
+            //GetSegnalazioni();
         }
 
-        public void GetSegnalazioni()
+        public /*async*/ void GetSegnalazioni()
         {
-            var webClient = new WebClient();
+            /*
+            var webClient = new HttpClient();
+            var url = new Uri("https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo?1m6&1m2&1d45.313071441179176&2d8.877662976231022&2m2&1d45.599745974786636&2d9.284555862641582&2u9&4sit&5e2&7b0&8e0&callback=xdc.iuitjo&token=24306");
+            var response = await webClient.GetAsync(url);
+            var fileFromCASC = await response.Content.ReadAsStringAsync();
 
-            webClient.DownloadStringCompleted += (s, e) => {
-                var text = e.Result; // get the downloaded text
-                
-            };
-            var url = new Uri("https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo?1m6&1m2&1d45.448210178053415&2d9.143269606046829&2m2&1d45.48403894278448&2d9.194123336632856&2u12&4sit&5e2&7b0&8e0&callback=xdc.qa2sy6&token=103580");
-            webClient.Encoding = Encoding.UTF8;
-            webClient.DownloadStringAsync(url);
+            Parser parser = new Parser();
+            parser.ParseString(fileFromCASC, false);
+            docKml = (Document)((Kml)parser.Root).Feature;
+            */
+
+            Parser parser = new Parser();
+            var assembly = typeof(ZonesPage).GetTypeInfo().Assembly;
+            parser.Parse(assembly.GetManifestResourceStream("RondApp.SEGNALAZIONI.kml"));
+            docKml = (Document)((Kml)parser.Root).Feature;
+            
+            foreach (Feature feat in docKml.Features)
+            {
+                List<string> zone = new List<string>();
+                if (((Placemark)feat).Geometry is SharpKml.Dom.Point)
+                {
+                    SharpKml.Dom.Point point = (SharpKml.Dom.Point)((Placemark)feat).Geometry;
+                    Segnalazione s = new Segnalazione()
+                    {
+                        Name = feat.Name,
+                        Description = feat.Description.Text,
+                        Latitude = point.Coordinate.Latitude,
+                        Longitude = point.Coordinate.Longitude
+                    };
+                    myMap.Segnalazioni.Add(s);
+                }
+            }
+        }
+
+        private void SetMapPins()
+        {
+            foreach (Segnalazione seg in myMap.Segnalazioni)
+            {
+                Pin segnalazionePin = new Pin
+                {
+                    Label = seg.Name + "\n" + seg.Description,
+                    Position = new Position(seg.Latitude, seg.Longitude),
+                    Type = PinType.Place
+                };
+
+                myMap.Pins.Add(segnalazionePin);
+            }
         }
 
         public void InitializePicker()
@@ -113,8 +148,6 @@ namespace RondApp.Views
 
                 Position Pos = new Position(45.4773, 9.1815);
                 myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(5)));
-
-                this.SetMapPins(segnalazioni);
             }
             else if (status != PermissionStatus.Unknown)
             {
@@ -126,21 +159,6 @@ namespace RondApp.Views
         {
             Position Pos = new Position(e.Position.Latitude, e.Position.Longitude);
             myMap.MoveToRegion(MapSpan.FromCenterAndRadius(Pos, Distance.FromKilometers(1)));
-        }
-
-        private void SetMapPins(List<Segnalazione> segnalazioni)
-        {
-            foreach (Segnalazione seg in segnalazioni)
-            {
-                Pin centerPin = new Pin
-                {
-                    Label = seg.Name + "\n" + seg.Description,
-                    Position = new Position(seg.Latitude, seg.Longitude),
-                    Type = PinType.Place
-                };
-                //centerPin.Clicked += CenterPin_Clicked;
-                myMap.Pins.Add(centerPin);
-            }
         }
     }
 }

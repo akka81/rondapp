@@ -35,6 +35,7 @@ namespace RondApp.Utils
         public ZoneMap()
         {
             ShapeCoordinates = new List<Position>();
+            Segnalazioni = new List<Segnalazione>();
         }
     }
 }
