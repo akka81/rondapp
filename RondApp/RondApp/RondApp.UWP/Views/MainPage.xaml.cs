@@ -20,7 +20,10 @@ namespace RondApp.UWP
         public MainPage()
         {
             this.InitializeComponent();
-            Xamarin.FormsMaps.Init("DOwE9c04FYANowXYO9hi~ZYjofh9rVDSPWP9-oRetBg~AuQh1S2XTqR1npW1wBJ5v3s9lPoOO-lwl-MOcbZetnEp0Sq2C3yGdWVna2KYjk71");
+            // Dev Key
+            //Xamarin.FormsMaps.Init("DOwE9c04FYANowXYO9hi~ZYjofh9rVDSPWP9-oRetBg~AuQh1S2XTqR1npW1wBJ5v3s9lPoOO-lwl-MOcbZetnEp0Sq2C3yGdWVna2KYjk71");
+            // Prod Key
+            Xamarin.FormsMaps.Init("dauOpNSWpEk3ryUQZlpp~WBVtKxZVM5DUo33CjM9qwA~AmIw0UTBTSK_QPtMrR4k5q_8UhP2G67Q1e25Qu-Wa1ImC5XIVxUjWK_hrfRC9Mik");
             LoadApplication(new RondApp.App());
         }
     }
