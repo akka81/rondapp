@@ -8,7 +8,7 @@
     <Label FontSize="{StaticResource LargeFontSize}" FontAttributes="Bold" Text="Ronda Carità e Solidarietà Milano" TextColor="#3F51B5"  VerticalOptions="Center" HorizontalOptions="Center" />
     <Image Source="rondaCarita.png"  VerticalOptions="Center" HorizontalOptions="Center" />
     <Label FontSize="{StaticResource LargeFontSize}" Text="RondApp" TextColor="#3F51B5"  VerticalOptions="Center" HorizontalOptions="Center" />
-    <Label FontSize="{StaticResource SmallFontSize}" Text="v 1.0 (beta) Anakin" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label FontSize="{StaticResource SmallFontSize}" Text="v 1.2 BB8" VerticalOptions="Center" HorizontalOptions="Center" />
 
     <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="0,20,0,20">
       <Label FontSize="{StaticResource MediumFontSize}" Text="Developers" VerticalOptions="Center" HorizontalOptions="Center" />

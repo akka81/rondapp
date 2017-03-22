@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="hware.rondapp" android:versionCode="3" android:versionName="1.1 Anakin">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="hware.rondapp" android:versionCode="5" android:versionName="1.2 BB8">
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -11,10 +11,10 @@
 	<uses-permission android:name="android.permission.CALL_PHONE" />
 	<application android:label="RondApp" android:icon="@drawable/rondaCarita" android:theme="@style/RondAppTheme" android:debuggable="false">
     <!-- Production Key -->
-    <!--meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAD01o1NesrqjZ7bPNdqS4GLK04qiOqnsU" /-->
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAD01o1NesrqjZ7bPNdqS4GLK04qiOqnsU" />
     <!-- Marco's development Key -->
     <!--meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDeaMLAn8a0N9qAIdeYYiTkbdMO_8houTE" /-->
     <!-- Andrea's development Key -->
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCPDQMVu4IRjcDkeU9RFEYeq6TY1mBkZAQ" />
+    <!--meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCPDQMVu4IRjcDkeU9RFEYeq6TY1mBkZAQ" /-->
   </application>
 </manifest>
