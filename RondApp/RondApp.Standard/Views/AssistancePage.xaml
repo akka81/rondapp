@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RondApp.Views.AssistancePage" NavigationPage.BackButtonTitle="Trova Centro" Title="Trova Centro" Icon="icon.png">
+
+  <ScrollView>
+  <StackLayout Orientation="Vertical">
+
+    <StackLayout Padding="20" Orientation="Vertical">
+      <Label Text="Trova il centro adeguato in base ai criteri" HorizontalOptions="Center"></Label>
+    </StackLayout>
+
+    <StackLayout Orientation="Vertical" Padding="20">
+      <Picker x:Name="OriginPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand" Title="Origine..."></Picker>
+      <Picker x:Name="GenderPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand" Title="Genere..."></Picker>
+      <Picker x:Name="HygienePicker" SelectedIndex="0" HorizontalOptions="FillAndExpand" Title="Igiene Personale..."></Picker>
+      <Picker x:Name="HealthPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand" Title="Problemi di salute..."></Picker>
+      <Entry x:Name="AgeRangeEntry" Placeholder="età (0-100)" HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
+
+      <StackLayout Orientation="Horizontal">
+        <Button x:Name="SearchBtn" Text="Cerca" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}"/>
+        <Button x:Name="ResetBtn" Text="Reset" HorizontalOptions="FillAndExpand" Style="{StaticResource buttonStyle}" FontSize="{StaticResource SmallFontSize}"/>
+      </StackLayout>
+
+      <Label x:Name="NoResultsLbl" FontSize="{StaticResource MediumFontSize}" FontAttributes="Bold" IsVisible="false" Text="Non sono stati trovati centri compatibili" HorizontalOptions="Center" />
+    </StackLayout>
+
+  </StackLayout>
+  </ScrollView>
+</ContentPage>

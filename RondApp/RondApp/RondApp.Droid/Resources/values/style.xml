@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <style name="RondAppTheme" parent="RondAppTheme.Base">
+    <item name="android:statusBarColor">@color/primary_dark</item>
+    
   </style>
   <style name="RondAppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="colorPrimary">@color/primary</item>

@@ -32,6 +32,8 @@ namespace RondApp
             DbCenters DbMng = new DbCenters();
             DbMng.LoadDbData();
             MainPage = new Views.MainPage();
+
+            
         }
 
     }

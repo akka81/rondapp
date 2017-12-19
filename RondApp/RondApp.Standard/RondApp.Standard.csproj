@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>RondApp</RootNamespace>
+    <AssemblyName>RondApp</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.Permissions" Version="2.1.0.72-beta" />
+    <PackageReference Include="SharpKml.Core" Version="3.0.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.166-beta" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="5.0.0.175-beta" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="2.5.0.121934" />
+    <PackageReference Include="Xamarin.Forms.Pages" Version="2.5.0.121934" />
+    <PackageReference Include="Xamarin.Forms.Theme.Base" Version="1.0.0.43-pre1" />
+    <PackageReference Include="Xamarin.Forms.Theme.Light" Version="1.0.0.43-pre1" />
+  </ItemGroup>
+
+</Project>

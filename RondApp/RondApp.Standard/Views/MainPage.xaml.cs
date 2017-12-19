@@ -8,7 +8,6 @@ namespace RondApp.Views
     {
         public MainPage()
         {
-            
             InitializeComponent();
             navMenu.GetNavigationListView.ItemSelected += OnItemSelected;
         }

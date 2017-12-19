@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Background;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -22,6 +23,7 @@ namespace RondApp.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+           
         }
 
         /// <summary>
@@ -104,5 +106,13 @@ namespace RondApp.UWP
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
+        private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
+        {
+          
+            var deferral = sender.GetDeferral();
+            deferral.Complete();
+        }
+
     }
 }

@@ -14,6 +14,9 @@ namespace RondApp.Droid
             FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
 
+
+            SetTheme(Resource.Style.RondAppTheme);
+
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
